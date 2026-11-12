@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-maroon: #7A1824;
+    --color-maroon-dark: #3D0B11;
+    --color-gold: #B8860B;
+    --color-gold-light: #D4AF62;
+    --color-ivory: #F6ECD9;
+  }
+
+  body {
+    background-color: #F6ECD9;
+    color: #3D0B11;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Gold Foil Text Gradient for Dark Surfaces */
+.text-gold-foil {
+  background: linear-gradient(
+    135deg,
+    #BF953F 0%,
+    #FCF6BA 25%,
+    #D4AF62 50%,
+    #FBF5B7 75%,
+    #AA771C 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Royal Temple Crimson & Antique Bronze Gradient for Warm Parchment Surfaces */
+.text-temple-crimson {
+  background: linear-gradient(
+    135deg,
+    #5C0C16 0%,
+    #8F192E 35%,
+    #6B1020 65%,
+    #4A0815 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-antique-brass {
+  background: linear-gradient(
+    135deg,
+    #785109 0%,
+    #B8860B 35%,
+    #8B6508 70%,
+    #5C3E04 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gold-foil {
+  background: linear-gradient(
+    135deg,
+    #BF953F 0%,
+    #FCF6BA 25%,
+    #D4AF62 50%,
+    #FBF5B7 75%,
+    #AA771C 100%
+  );
+}
+
+.border-gold-foil {
+  border-image: linear-gradient(135deg, #BF953F, #FCF6BA, #D4AF62, #AA771C) 1;
+}
+
+/* 3D Perspective Utilities for the Envelope and Cards */
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Subtle Temple Sandstone & Parchment Pattern Overlay */
+.bg-brocade-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.08) 2px, transparent 2.5px),
+    radial-gradient(circle at 0% 0%, rgba(122, 24, 36, 0.05) 4px, transparent 5px),
+    radial-gradient(circle at 100% 100%, rgba(184, 134, 11, 0.06) 4px, transparent 5px);
+  background-size: 36px 36px;
+}
+
+/* Warm Parchment Watercolor Texture */
+.bg-parchment-wash {
+  background-color: #F7EFE1;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(234, 215, 183, 0.55) 0%, transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(226, 200, 160, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(234, 215, 183, 0.6) 0%, transparent 60%);
+}
+
+/* Ornamental Gold Box Shadow */
+.gold-glow {
+  box-shadow: 
+    0 15px 40px -10px rgba(74, 44, 17, 0.22),
+    0 0 25px rgba(184, 134, 11, 0.2),
+    inset 0 0 20px rgba(184, 134, 11, 0.1);
+}
+
+.gold-glow-strong {
+  box-shadow: 
+    0 20px 60px -10px rgba(61, 11, 17, 0.35),
+    0 0 40px rgba(184, 134, 11, 0.35),
+    inset 0 0 30px rgba(212, 175, 98, 0.18);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EAD7B7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7A1824, #B8860B, #7A1824);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7A1824;
+}
