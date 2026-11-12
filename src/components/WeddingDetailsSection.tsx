@@ -68,11 +68,11 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
   return (
     <section
       id="wedding-details"
-      className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20"
+      className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16"
     >
       {/* 1. BRIDE & GROOM ROYAL LINEAGE & PARENTS CARDS */}
       <div>
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
             Sacred Union of Two Families
           </span>
@@ -83,118 +83,98 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Groom Card with Temple Courtyard Reference Backdrop */}
+          {/* Groom Card */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            whileHover={{ y: -5 }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-3xl p-7 sm:p-9 bg-[#FBF5E8] border-2 border-[#B8860B]/65 gold-glow overflow-hidden"
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.55 }}
+            className="relative rounded-3xl pt-20 pb-36 px-6 sm:px-8 border-2 border-[#B8860B]/70 shadow-[0_20px_50px_rgba(61,11,17,0.18)] overflow-hidden bg-no-repeat bg-center"
+            style={{
+              backgroundColor: '#F7EFE1',
+              backgroundImage: `url('./backgrounds/temple-courtyard-lamps.jpg')`,
+              backgroundSize: '100% 100%',
+            }}
           >
-            <div
-              className="absolute inset-0 opacity-25 bg-cover bg-center pointer-events-none"
-              style={{ backgroundImage: `url('./backgrounds/temple-courtyard-lamps.jpg')` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#FBF5E8]/85 via-[#FBF5E8]/90 to-[#F3E3C6]/92 pointer-events-none" />
-
-            <GoldCornerOrnament position="top-left" className="absolute top-2 left-2 opacity-85" />
-            <GoldCornerOrnament position="top-right" className="absolute top-2 right-2 opacity-85" />
-            <GoldCornerOrnament position="bottom-left" className="absolute bottom-2 left-2 opacity-85" />
-            <GoldCornerOrnament position="bottom-right" className="absolute bottom-2 right-2 opacity-85" />
-
-            <div className="relative z-10 text-center space-y-3">
+            <div className="relative z-10 text-center space-y-3 bg-[#FFFDF8]/88 backdrop-blur-[2px] p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
               <span className="inline-block px-4 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-widest bg-[#7A1824] text-[#FCF6BA] border border-[#D4AF62]">
                 Pelli Koduku • The Groom
               </span>
 
               <div className="pt-1">
-                <p className="text-xs font-sans font-bold uppercase tracking-widest text-[#8B6508]">
+                <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#8B6508]">
                   Full Name
                 </p>
-                <h3 className="font-display text-2xl sm:text-3xl font-bold text-temple-crimson mt-0.5">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-temple-crimson mt-0.5">
                   {data.groom.fullName}
                 </h3>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#EAD7B7]/80 border border-[#B8860B]/40">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45">
                 <span className="text-xs font-sans font-semibold text-[#5C3A10]">Nick Name:</span>
                 <span className="font-display text-base font-bold text-[#7A1824]">
                   {data.groom.firstName}
                 </span>
               </div>
 
-              <p className="text-sm sm:text-base font-serif italic text-[#4A2C11] max-w-md mx-auto pt-1">
-                “{data.groom.bio}”
-              </p>
-
-              <div className="pt-4 mt-4 border-t border-[#B8860B]/40">
-                <p className="text-xs font-sans font-bold uppercase tracking-widest text-[#8B6508]">
+              <div className="pt-3 mt-3 border-t border-[#B8860B]/35">
+                <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#8B6508]">
                   Parents
                 </p>
-                <p className="font-serif text-lg sm:text-xl font-bold text-[#3D0B11] mt-1">
+                <p className="font-serif text-base sm:text-lg font-bold text-[#3D0B11] mt-1">
                   {data.groom.parents.father}
                 </p>
-                <p className="font-serif text-lg sm:text-xl font-bold text-[#3D0B11]">
+                <p className="font-serif text-base sm:text-lg font-bold text-[#3D0B11]">
                   {data.groom.parents.mother}
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Bride Card with Temple Gopuram & Lotus Reference Backdrop */}
+          {/* Bride Card */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            whileHover={{ y: -5 }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-3xl p-7 sm:p-9 bg-[#FBF5E8] border-2 border-[#B8860B]/65 gold-glow overflow-hidden"
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.55 }}
+            className="relative rounded-3xl pt-20 pb-36 px-6 sm:px-8 border-2 border-[#B8860B]/70 shadow-[0_20px_50px_rgba(61,11,17,0.18)] overflow-hidden bg-no-repeat bg-center"
+            style={{
+              backgroundColor: '#F7EFE1',
+              backgroundImage: `url('./backgrounds/temple-gopuram-lotus.jpg')`,
+              backgroundSize: '100% 100%',
+            }}
           >
-            <div
-              className="absolute inset-0 opacity-25 bg-cover bg-center pointer-events-none"
-              style={{ backgroundImage: `url('./backgrounds/temple-gopuram-lotus.jpg')` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#FBF5E8]/85 via-[#FBF5E8]/90 to-[#F3E3C6]/92 pointer-events-none" />
-
-            <GoldCornerOrnament position="top-left" className="absolute top-2 left-2 opacity-85" />
-            <GoldCornerOrnament position="top-right" className="absolute top-2 right-2 opacity-85" />
-            <GoldCornerOrnament position="bottom-left" className="absolute bottom-2 left-2 opacity-85" />
-            <GoldCornerOrnament position="bottom-right" className="absolute bottom-2 right-2 opacity-85" />
-
-            <div className="relative z-10 text-center space-y-3">
+            <div className="relative z-10 text-center space-y-3 bg-[#FFFDF8]/88 backdrop-blur-[2px] p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
               <span className="inline-block px-4 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-widest bg-[#7A1824] text-[#FCF6BA] border border-[#D4AF62]">
                 Pelli Kuthuru • The Bride
               </span>
 
               <div className="pt-1">
-                <p className="text-xs font-sans font-bold uppercase tracking-widest text-[#8B6508]">
+                <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#8B6508]">
                   Full Name
                 </p>
-                <h3 className="font-display text-2xl sm:text-3xl font-bold text-temple-crimson mt-0.5">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-temple-crimson mt-0.5">
                   {data.bride.fullName}
                 </h3>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#EAD7B7]/80 border border-[#B8860B]/40">
+              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45">
                 <span className="text-xs font-sans font-semibold text-[#5C3A10]">Nick Name:</span>
                 <span className="font-display text-base font-bold text-[#7A1824]">
                   {data.bride.firstName}
                 </span>
               </div>
 
-              <p className="text-sm sm:text-base font-serif italic text-[#4A2C11] max-w-md mx-auto pt-1">
-                “{data.bride.bio}”
-              </p>
-
-              <div className="pt-4 mt-4 border-t border-[#B8860B]/40">
-                <p className="text-xs font-sans font-bold uppercase tracking-widest text-[#8B6508]">
+              <div className="pt-3 mt-3 border-t border-[#B8860B]/35">
+                <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#8B6508]">
                   Parents
                 </p>
-                <p className="font-serif text-lg sm:text-xl font-bold text-[#3D0B11] mt-1">
+                <p className="font-serif text-base sm:text-lg font-bold text-[#3D0B11] mt-1">
                   {data.bride.parents.mother}
                 </p>
-                <p className="font-serif text-lg sm:text-xl font-bold text-[#3D0B11]">
+                <p className="font-serif text-base sm:text-lg font-bold text-[#3D0B11]">
                   {data.bride.parents.father}
                 </p>
               </div>
@@ -258,7 +238,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
 
       {/* 3. BRIDE'S SIDE (PELLI KUTHURU) & GROOM'S SIDE (PELLI KODUKU) COMPLETE TIMELINES */}
       <div>
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
             Dec 10th to Dec 14th, 2026
           </span>
@@ -279,12 +259,6 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
             viewport={{ once: true }}
             className="relative rounded-3xl p-6 sm:p-8 bg-[#FBF5E8] border-2 border-[#B8860B]/70 gold-glow overflow-hidden"
           >
-            <div
-              className="absolute inset-0 opacity-20 bg-cover bg-center pointer-events-none"
-              style={{ backgroundImage: `url('./backgrounds/temple-arch-kalash.jpg')` }}
-            />
-            <div className="absolute inset-0 bg-[#FBF5E8]/88 pointer-events-none" />
-
             <GoldCornerOrnament position="top-left" className="absolute top-2 left-2 opacity-80" />
             <GoldCornerOrnament position="top-right" className="absolute top-2 right-2 opacity-80" />
 
@@ -305,7 +279,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                 {data.brideSideSchedule.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-[#FFFDF9]/95 border border-[#B8860B]/45 shadow-sm flex items-start gap-3.5"
+                    className="p-4 rounded-2xl bg-[#FFFDF9] border border-[#B8860B]/45 shadow-sm flex items-start gap-3.5"
                   >
                     <div className="w-11 h-11 rounded-xl bg-[#F5E6C8] border border-[#B8860B]/50 flex items-center justify-center flex-shrink-0 mt-0.5">
                       {renderCeremonyIcon(item.iconType)}
@@ -354,12 +328,6 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
             viewport={{ once: true }}
             className="relative rounded-3xl p-6 sm:p-8 bg-[#FBF5E8] border-2 border-[#B8860B]/70 gold-glow overflow-hidden"
           >
-            <div
-              className="absolute inset-0 opacity-20 bg-cover bg-center pointer-events-none"
-              style={{ backgroundImage: `url('./backgrounds/temple-courtyard-lamps.jpg')` }}
-            />
-            <div className="absolute inset-0 bg-[#FBF5E8]/88 pointer-events-none" />
-
             <GoldCornerOrnament position="top-left" className="absolute top-2 left-2 opacity-80" />
             <GoldCornerOrnament position="top-right" className="absolute top-2 right-2 opacity-80" />
 
@@ -380,7 +348,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                 {data.groomSideSchedule.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-[#FFFDF9]/95 border border-[#B8860B]/45 shadow-sm flex items-start gap-3.5"
+                    className="p-4 rounded-2xl bg-[#FFFDF9] border border-[#B8860B]/45 shadow-sm flex items-start gap-3.5"
                   >
                     <div className="w-11 h-11 rounded-xl bg-[#F5E6C8] border border-[#B8860B]/50 flex items-center justify-center flex-shrink-0 mt-0.5">
                       {renderCeremonyIcon(item.iconType)}
@@ -426,7 +394,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
 
       {/* 4. DETAILED CEREMONY CARDS */}
       <div>
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
             Auspicious Rituals &amp; Celebrations
           </span>
@@ -504,7 +472,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
 
       {/* 5. WEDDING VENUE (GUNTUR) & RECEPTION VENUE (JANGAREDDYGUDEM) + GOOGLE MAPS LINKS */}
       <div id="venue-section" className="scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
             Venues &amp; Google Maps Directions
           </span>
@@ -522,12 +490,6 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
             viewport={{ once: true }}
             className="relative rounded-3xl p-6 sm:p-9 bg-[#FBF5E8] border-2 border-[#B8860B] gold-glow flex flex-col justify-between overflow-hidden"
           >
-            <div
-              className="absolute inset-0 opacity-20 bg-cover bg-center pointer-events-none"
-              style={{ backgroundImage: `url('./backgrounds/temple-gopuram-lotus.jpg')` }}
-            />
-            <div className="absolute inset-0 bg-[#FBF5E8]/88 pointer-events-none" />
-
             <GoldCornerOrnament position="top-left" className="absolute top-2 left-2" />
             <GoldCornerOrnament position="top-right" className="absolute top-2 right-2" />
 
@@ -576,12 +538,6 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
             viewport={{ once: true }}
             className="relative rounded-3xl p-6 sm:p-9 bg-[#FBF5E8] border-2 border-[#B8860B] gold-glow flex flex-col justify-between overflow-hidden"
           >
-            <div
-              className="absolute inset-0 opacity-20 bg-cover bg-center pointer-events-none"
-              style={{ backgroundImage: `url('./backgrounds/temple-courtyard-lamps.jpg')` }}
-            />
-            <div className="absolute inset-0 bg-[#FBF5E8]/88 pointer-events-none" />
-
             <GoldCornerOrnament position="top-left" className="absolute top-2 left-2" />
             <GoldCornerOrnament position="top-right" className="absolute top-2 right-2" />
 

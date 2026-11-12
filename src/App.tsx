@@ -12,8 +12,6 @@ export function App() {
   const [activeTheme, setActiveTheme] = useState<WeddingThemeId>('temple-arch');
   const [isEnvelopeOpened, setIsEnvelopeOpened] = useState<boolean>(false);
 
-  const currentTheme = weddingData.themes[activeTheme];
-
   const handleEnvelopeOpenComplete = () => {
     setIsEnvelopeOpened(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -25,20 +23,7 @@ export function App() {
   };
 
   return (
-    <div
-      className="relative min-h-screen w-full text-[#3D0B11] transition-colors duration-700 overflow-x-hidden bg-parchment-wash"
-      style={{
-        backgroundColor: currentTheme.primaryBg,
-      }}
-    >
-      {/* Fixed Subtle Reference Temple Background Wallpaper Layer */}
-      <div
-        className="fixed inset-0 pointer-events-none z-0 opacity-25 bg-cover bg-center bg-no-repeat transition-all duration-1000"
-        style={{
-          backgroundImage: `url('${currentTheme.bgImage}')`,
-        }}
-      />
-
+    <div className="relative min-h-screen w-full text-[#3D0B11] overflow-x-hidden bg-gradient-to-b from-[#EFE1C6] via-[#F7EFE0] to-[#EAD7B7]">
       {/* Persistent Classical Instrumental Music Controls (Play/Pause & Mute/Unmute) */}
       <AudioController />
 
@@ -61,7 +46,7 @@ export function App() {
             transition={{ duration: 0.85 }}
             className="relative z-10"
           >
-            {/* Section 2: Main Wedding Invitation — Traditional Temple Parchment & Reference Art */}
+            {/* Section 2: Main Wedding Invitation — Crisp Reference Temple Arch & Kalash Scroll */}
             <MainInvitationHero
               data={weddingData}
               activeTheme={activeTheme}
@@ -72,7 +57,7 @@ export function App() {
             {/* Section 3: Wedding Details, Countdown, Bride & Groom Side Ceremonies, Wedding & Reception Venues */}
             <WeddingDetailsSection data={weddingData} />
 
-            {/* Footer & Live Customization Modal */}
+            {/* Footer */}
             <FooterSection
               data={weddingData}
               onUpdateData={setWeddingData}
