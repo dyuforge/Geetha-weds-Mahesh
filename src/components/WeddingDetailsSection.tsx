@@ -288,7 +288,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
           <MandalaDivider />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
           {data.brideSideSchedule.map((item, idx) => (
             <motion.div
               key={item.event}
@@ -297,13 +297,17 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
               transition={{ delay: idx * 0.08, duration: 0.45 }}
-              className="relative w-full max-w-[340px] mx-auto aspect-[9/16] rounded-3xl p-4 border-2 border-[#B8860B]/75 shadow-[0_20px_50px_rgba(61,11,17,0.2)] overflow-hidden bg-cover bg-center bg-no-repeat flex items-center justify-center"
+              className="relative w-full max-w-[380px] mx-auto aspect-[9/16] rounded-3xl border-2 border-[#B8860B]/75 shadow-[0_20px_50px_rgba(61,11,17,0.2)] overflow-hidden bg-cover bg-center bg-no-repeat"
               style={{
                 backgroundColor: '#FBF5E8',
                 backgroundImage: item.bgImage ? `url('${item.bgImage}')` : undefined,
               }}
             >
-              <div className="relative z-10 w-[86%] max-w-[250px] text-center space-y-2 bg-gradient-to-b from-[#6B1020]/95 via-[#5C0C16]/95 to-[#4A0815]/95 px-4 py-3.5 rounded-2xl border-2 border-[#D4AF62] shadow-[0_14px_34px_rgba(61,11,17,0.45)]">
+              <div
+                className={`absolute left-1/2 -translate-x-1/2 z-10 w-[82%] max-w-[260px] text-center space-y-1.5 bg-gradient-to-b from-[#6B1020]/95 via-[#5C0C16]/95 to-[#4A0815]/95 px-4 py-3 rounded-2xl border-2 border-[#D4AF62] shadow-[0_14px_34px_rgba(61,11,17,0.45)] ${
+                  item.contentTopClass || 'top-1/2 -translate-y-1/2'
+                }`}
+              >
                 <div className="absolute inset-1 border border-[#FCF6BA]/25 rounded-xl pointer-events-none" />
                 <span className="relative inline-block px-2.5 py-0.5 rounded-full bg-[#D4AF62] text-[#3D0711] text-[10px] font-sans font-extrabold uppercase tracking-wider shadow-sm">
                   {item.date} • {item.dayLabel}

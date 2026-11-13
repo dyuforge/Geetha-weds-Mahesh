@@ -284,9 +284,9 @@ export const FloralToranGarland: React.FC<{ className?: string }> = ({ className
   return (
     <div className={`w-full overflow-hidden pointer-events-none select-none ${className}`}>
       <svg
-        viewBox="0 0 1200 110"
+        viewBox="0 0 1200 135"
         preserveAspectRatio="none"
-        className="w-full h-16 sm:h-24 drop-shadow-[0_6px_12px_rgba(0,0,0,0.6)]"
+        className="w-full h-20 sm:h-28 drop-shadow-[0_6px_14px_rgba(61,11,17,0.45)]"
       >
         <defs>
           <linearGradient id="goldRod" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -297,59 +297,85 @@ export const FloralToranGarland: React.FC<{ className?: string }> = ({ className
         </defs>
 
         {/* Top Golden Toran Rod */}
-        <rect x="0" y="0" width="1200" height="6" fill="url(#goldRod)" />
+        <rect x="0" y="0" width="1200" height="7" fill="url(#goldRod)" />
 
-        {/* Repeating Mango Leaves, Marigold Loops & Hanging Temple Bells */}
+        {/* Repeating Dense Mango Leaves, Thick Marigold & Jasmine Garlands, and Hanging Temple Bells */}
         {[0, 200, 400, 600, 800, 1000].map((offset) => (
           <g key={offset} transform={`translate(${offset}, 0)`}>
-            {/* Auspicious Mango Leaves along top */}
-            {[20, 60, 100, 140, 180].map((lx) => (
+            {/* Dense Overlapping Mango Leaves along top */}
+            {[10, 30, 50, 70, 90, 110, 130, 150, 170, 190].map((lx, idx) => (
               <path
                 key={lx}
-                d={`M${lx} 6 C${lx - 7} 22, ${lx - 4} 34, ${lx} 42 C${lx + 4} 34, ${lx + 7} 22, ${lx} 6 Z`}
-                fill="#15803D"
+                d={`M${lx} 6 C${lx - 9} 26, ${lx - 5} 42, ${lx} 52 C${lx + 5} 42, ${lx + 9} 26, ${lx} 6 Z`}
+                fill={idx % 2 === 0 ? '#15803D' : '#166534'}
                 stroke="#D4AF62"
-                strokeWidth="0.8"
+                strokeWidth="0.9"
               />
             ))}
 
-            {/* Swooping Jasmine & Marigold Garland Swag */}
+            {/* Thick Top Horizontal Marigold & Rose Flower Chain */}
+            {[15, 35, 55, 75, 95, 115, 135, 155, 175, 195].map((fx, idx) => (
+              <g key={`top-${fx}`}>
+                <circle
+                  cx={fx}
+                  cy={14}
+                  r={idx % 3 === 0 ? 9 : 7.5}
+                  fill={idx % 3 === 0 ? '#DC2626' : idx % 2 === 0 ? '#F59E0B' : '#FBBF24'}
+                  stroke="#92400E"
+                  strokeWidth="0.6"
+                />
+                <circle cx={fx} cy={14} r={2.5} fill="#FFF8EA" />
+              </g>
+            ))}
+
+            {/* Thick Swooping Outer & Inner Flower Garland Swags */}
             <path
-              d="M0 12 Q100 88 200 12"
+              d="M0 18 Q100 108 200 18"
               fill="none"
               stroke="#FFF8EA"
-              strokeWidth="6"
-              strokeDasharray="2 8"
+              strokeWidth="12"
+              strokeDasharray="1 10"
               strokeLinecap="round"
             />
             <path
-              d="M0 18 Q100 96 200 18"
+              d="M0 22 Q100 112 200 22"
               fill="none"
               stroke="#F59E0B"
-              strokeWidth="9"
-              strokeDasharray="1 14"
+              strokeWidth="15"
+              strokeDasharray="2 11"
               strokeLinecap="round"
             />
             <path
-              d="M0 15 Q100 92 200 15"
+              d="M0 20 Q100 110 200 20"
               fill="none"
               stroke="#DC2626"
-              strokeWidth="7"
-              strokeDasharray="1 22"
+              strokeWidth="10"
+              strokeDasharray="1 24"
               strokeLinecap="round"
             />
 
-            {/* Hanging Golden Temple Bell & Jasmine Tassel at Each Arch */}
-            <line x1="100" y1="52" x2="100" y2="85" stroke="#D4AF62" strokeWidth="1.8" />
-            <circle cx="100" cy="65" r="5" fill="#F59E0B" />
-            <circle cx="100" cy="75" r="4" fill="#DC2626" />
+            {/* Side Jasmine & Marigold Hanging Strings */}
+            {[45, 155].map((sx) => (
+              <g key={`side-${sx}`}>
+                <line x1={sx} y1="36" x2={sx} y2="76" stroke="#D4AF62" strokeWidth="1.4" />
+                <circle cx={sx} cy="48" r="5.5" fill="#FBBF24" />
+                <circle cx={sx} cy="59" r="4.5" fill="#FFF8EA" />
+                <circle cx={sx} cy="70" r="5.5" fill="#DC2626" />
+              </g>
+            ))}
+
+            {/* Center Hanging Golden Temple Bell & Thick Flower Tassel at Each Arch */}
+            <line x1="100" y1="60" x2="100" y2="106" stroke="#D4AF62" strokeWidth="2" />
+            <circle cx="100" cy="70" r="7.5" fill="#F59E0B" stroke="#92400E" strokeWidth="0.7" />
+            <circle cx="100" cy="83" r="6" fill="#DC2626" />
+            <circle cx="100" cy="94" r="5" fill="#FFF8EA" />
             <path
-              d="M92 94 L108 94 L104 82 L96 82 Z"
+              d="M89 116 L111 116 L106 101 L94 101 Z"
               fill="#D4AF62"
               stroke="#FCF6BA"
-              strokeWidth="1"
+              strokeWidth="1.2"
             />
-            <circle cx="100" cy="97" r="2.5" fill="#FFF8EA" />
+            <circle cx="100" cy="120" r="3" fill="#FFF8EA" />
           </g>
         ))}
       </svg>

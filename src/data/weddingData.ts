@@ -78,6 +78,7 @@ export interface SideScheduleItem {
   mapUrl?: string;
   iconType: 'haldi' | 'mehendi' | 'sangeet' | 'muhurtham' | 'reception';
   bgImage?: string;
+  contentTopClass?: string;
 }
 
 export interface WeddingData {
@@ -199,6 +200,7 @@ export const defaultWeddingData: WeddingData = {
       mapUrl: 'https://maps.app.goo.gl/QajhXv9KGaz1VBBy5',
       iconType: 'haldi',
       bgImage: './backgrounds/event-haldi.jpg',
+      contentTopClass: 'top-[33%]',
     },
     {
       date: 'Dec 11, 2026',
@@ -209,6 +211,7 @@ export const defaultWeddingData: WeddingData = {
       mapUrl: 'https://maps.app.goo.gl/QajhXv9KGaz1VBBy5',
       iconType: 'sangeet',
       bgImage: './backgrounds/event-sangeeth.jpg',
+      contentTopClass: 'top-[28%]',
     },
     {
       date: 'Dec 12, 2026',
@@ -219,16 +222,18 @@ export const defaultWeddingData: WeddingData = {
       mapUrl: 'https://share.google/EyIE2Beb1kxANXDZo',
       iconType: 'muhurtham',
       bgImage: './backgrounds/event-marriage.jpg',
+      contentTopClass: 'top-[42%]',
     },
     {
       date: 'Dec 14, 2026',
       dayLabel: 'Monday',
-      event: 'Vratham & Reception',
+      event: 'Reception',
       time: '11:00 AM',
       venue: 'Raja Rani Function Hall, Jangareddygudem',
       mapUrl: 'https://share.google/O2Z9t337pE3JohHuU',
       iconType: 'reception',
       bgImage: './backgrounds/event-reception.jpg',
+      contentTopClass: 'top-[23%]',
     },
   ],
   groomSideSchedule: [

@@ -6,6 +6,7 @@ import {
   LordGaneshaArtwork,
   AnimatedDiya,
   GoldCornerOrnament,
+  FloralToranGarland,
 } from './OrnamentalSVGs';
 import { soundEngine } from '../utils/soundEngine';
 
@@ -71,8 +72,11 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25, ease: 'easeOut' }}
-      className="relative min-h-screen w-full flex items-center justify-center py-3 sm:py-6 px-2.5 sm:px-4 select-none bg-gradient-to-b from-[#E8D5B5] via-[#F5E9D4] to-[#E2CBA4]"
+      className="relative min-h-screen w-full flex items-center justify-center pt-16 sm:pt-24 pb-4 px-2.5 sm:px-4 select-none bg-gradient-to-b from-[#E8D5B5] via-[#F5E9D4] to-[#E2CBA4]"
     >
+      {/* Thick Traditional Mango Leaves & Marigold Flower Toran at Top of Landing Page */}
+      <FloralToranGarland className="absolute top-0 inset-x-0 z-30" />
+
       {/* Exact 2:3 Portrait Temple Frame — Matches 682x1024 Image Ratio on All Screens (No Zoom/Stretch) */}
       <div
         className="relative w-full max-w-[540px] aspect-[2/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(61,11,17,0.3)] border-2 border-[#B8860B]/70 flex flex-col items-center justify-center gap-3.5 sm:gap-6 pt-12 sm:pt-16 pb-12 sm:pb-16 px-4 sm:px-10 bg-cover bg-center bg-no-repeat"
