@@ -75,7 +75,7 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
     >
       {/* Exact 2:3 Portrait Temple Frame — Matches 682x1024 Image Ratio on All Screens (No Zoom/Stretch) */}
       <div
-        className="relative w-full max-w-[540px] aspect-[2/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(61,11,17,0.3)] border-2 border-[#B8860B]/70 flex flex-col items-center justify-between pt-14 sm:pt-24 pb-12 sm:pb-24 px-4 sm:px-10 bg-cover bg-center bg-no-repeat"
+        className="relative w-full max-w-[540px] aspect-[2/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(61,11,17,0.3)] border-2 border-[#B8860B]/70 flex flex-col items-center justify-center gap-3.5 sm:gap-6 pt-12 sm:pt-16 pb-12 sm:pb-16 px-4 sm:px-10 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('./backgrounds/temple-courtyard-lamps.jpg')`,
         }}
@@ -97,7 +97,7 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
 
         {/* Center 3D Interactive Wedding Envelope Stage */}
         <div
-          className="relative z-20 my-auto w-full max-w-[270px] sm:max-w-[400px] flex flex-col items-center justify-center perspective-2000"
+          className="relative z-20 w-full max-w-[270px] sm:max-w-[400px] flex flex-col items-center justify-center perspective-2000"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -259,7 +259,7 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
                   <p className="text-[8px] sm:text-[10px] font-sans uppercase tracking-[0.2em] text-[#FCF6BA] mb-0.5">
                     శుభ వివాహ ఆహ్వాన పత్రిక
                   </p>
-                  <h1 className="font-display text-base sm:text-2xl font-bold text-gold-foil tracking-wider">
+                  <h1 className="font-display text-base sm:text-2xl font-bold text-gold-foil tracking-widest" style={{ fontVariantLigatures: 'none' }}>
                     {data.groom.firstName} &amp; {data.bride.firstName}
                   </h1>
                   <div className="mt-0.5 sm:mt-1 flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-serif tracking-[0.1em] text-[#FFF8EA]">
@@ -322,26 +322,28 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
                 />
               </svg>
 
-              {/* Embossed Royal Gold Wax Seal */}
-              <motion.div
-                animate={
-                  stage !== 'idle'
-                    ? { scale: 0.7, opacity: 0 }
-                    : { scale: [1, 1.05, 1], opacity: 1 }
-                }
-                transition={{
-                  duration: stage !== 'idle' ? 0.35 : 2.8,
-                  repeat: stage === 'idle' ? Infinity : 0,
-                }}
-                className="absolute left-1/2 -translate-x-1/2 bottom-1 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#FCF6BA] via-[#D4AF62] to-[#8A5A10] p-1 shadow-[0_8px_25px_rgba(0,0,0,0.6),0_0_20px_rgba(212,175,98,0.75)] flex items-center justify-center border-2 border-[#FFF8EA]"
-              >
-                <div className="w-full h-full rounded-full border border-[#6B1020]/60 bg-gradient-to-br from-[#D4AF62] to-[#9C7A32] flex flex-col items-center justify-center text-[#3D0711]">
-                  <span className="text-[9px] font-serif font-bold leading-none">ఓం</span>
-                  <span className="font-display text-xs font-black tracking-tighter">
-                    M &amp; G
-                  </span>
-                </div>
-              </motion.div>
+              {/* Embossed Royal Gold Wax Seal — Centered via flex wrapper so Framer scale never shifts it */}
+              <div className="absolute inset-x-0 bottom-1 flex justify-center pointer-events-none">
+                <motion.div
+                  animate={
+                    stage !== 'idle'
+                      ? { scale: 0.7, opacity: 0 }
+                      : { scale: [1, 1.05, 1], opacity: 1 }
+                  }
+                  transition={{
+                    duration: stage !== 'idle' ? 0.35 : 2.8,
+                    repeat: stage === 'idle' ? Infinity : 0,
+                  }}
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#FCF6BA] via-[#D4AF62] to-[#8A5A10] p-1 shadow-[0_8px_25px_rgba(0,0,0,0.6),0_0_20px_rgba(212,175,98,0.75)] flex items-center justify-center border-2 border-[#FFF8EA]"
+                >
+                  <div className="w-full h-full rounded-full border border-[#6B1020]/60 bg-gradient-to-br from-[#D4AF62] to-[#9C7A32] flex flex-col items-center justify-center text-[#3D0711]">
+                    <span className="text-[9px] font-serif font-bold leading-none">ఓం</span>
+                    <span className="font-display text-xs font-black tracking-tighter">
+                      M &amp; G
+                    </span>
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

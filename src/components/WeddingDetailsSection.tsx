@@ -110,9 +110,8 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                 </h3>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45">
-                <span className="text-xs font-sans font-semibold text-[#5C3A10]">Nick Name:</span>
-                <span className="font-display text-base font-bold text-[#7A1824]">
+              <div className="inline-flex items-center justify-center px-5 py-1 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45">
+                <span className="font-serif text-lg font-bold tracking-wider text-[#7A1824]">
                   {data.groom.firstName}
                 </span>
               </div>
@@ -158,9 +157,8 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                 </h3>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45">
-                <span className="text-xs font-sans font-semibold text-[#5C3A10]">Nick Name:</span>
-                <span className="font-display text-base font-bold text-[#7A1824]">
+              <div className="inline-flex items-center justify-center px-5 py-1 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45">
+                <span className="font-serif text-lg font-bold tracking-wider text-[#7A1824]">
                   {data.bride.firstName}
                 </span>
               </div>
@@ -234,22 +232,22 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
         </div>
       </motion.div>
 
-      {/* 3. BRIDE'S SIDE (PELLI KUTHURU) & GROOM'S SIDE (PELLI KODUKU) COMPLETE TIMELINES */}
+      {/* 3. BRIDE'S SIDE (PELLI KUTHURU) COMPLETE TIMELINE */}
       <div>
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
             Dec 10th to Dec 14th, 2026
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-temple-crimson mt-2">
-            Pelli Kuthuru &amp; Pelli Koduku Events
+            Pelli Kuthuru &amp; Wedding Events
           </h2>
           <p className="mt-2 text-sm sm:text-base font-serif text-[#4A2C11]">
-            Complete schedule of auspicious ceremonies for both Bride’s and Groom’s families
+            Complete schedule of auspicious wedding ceremonies
           </p>
           <MandalaDivider />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="max-w-2xl mx-auto">
           {/* Bride's Side (Pelli Kuthuru) Scroll */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -263,7 +261,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
             <div className="relative z-10">
               <div className="text-center pb-4 mb-5 border-b-2 border-[#B8860B]/40">
                 <span className="inline-block px-3.5 py-1 rounded-full bg-[#7A1824] text-[#FCF6BA] text-xs font-sans font-bold uppercase tracking-widest">
-                  Bride’s Side • Pelli Kuthuru
+                  Pelli Kuthuru • Wedding Schedule
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl font-bold text-temple-crimson mt-2">
                   Geetha Madhuri’s Festivities
@@ -275,75 +273,6 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
 
               <div className="space-y-4">
                 {data.brideSideSchedule.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-2xl bg-[#FFFDF9] border border-[#B8860B]/45 shadow-sm flex items-start gap-3.5"
-                  >
-                    <div className="w-11 h-11 rounded-xl bg-[#F5E6C8] border border-[#B8860B]/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      {renderCeremonyIcon(item.iconType)}
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <span className="text-xs font-sans font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-[#7A1824]/10 text-[#7A1824]">
-                          {item.date} ({item.dayLabel})
-                        </span>
-                        <span className="text-xs font-sans font-bold text-[#8B6508] flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5" />
-                          {item.time}
-                        </span>
-                      </div>
-                      <h4 className="font-serif text-lg sm:text-xl font-bold text-[#3D0B11] mt-1">
-                        {item.event}
-                      </h4>
-                      <div className="mt-1 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-sans text-[#5C3A10]">
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-[#7A1824] flex-shrink-0" />
-                          {item.venue}
-                        </span>
-                        {item.mapUrl && (
-                          <a
-                            href={item.mapUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-xs font-bold text-[#7A1824] underline hover:text-[#5C0C16]"
-                          >
-                            <span>Map Link</span>
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Groom's Side (Pelli Koduku) Scroll */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl p-6 sm:p-8 bg-[#FBF5E8] border-2 border-[#B8860B]/70 gold-glow overflow-hidden"
-          >
-            <GoldCornerOrnament position="top-left" className="absolute top-2 left-2 opacity-80" />
-            <GoldCornerOrnament position="top-right" className="absolute top-2 right-2 opacity-80" />
-
-            <div className="relative z-10">
-              <div className="text-center pb-4 mb-5 border-b-2 border-[#B8860B]/40">
-                <span className="inline-block px-3.5 py-1 rounded-full bg-[#7A1824] text-[#FCF6BA] text-xs font-sans font-bold uppercase tracking-widest">
-                  Groom’s Side • Pelli Koduku
-                </span>
-                <h3 className="font-display text-2xl sm:text-3xl font-bold text-temple-crimson mt-2">
-                  Mahesh’s Festivities
-                </h3>
-                <p className="text-xs font-serif text-[#5C3A10] mt-0.5">
-                  పెళ్లి కొడుకు వేడుకల వివరాలు
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {data.groomSideSchedule.map((item, idx) => (
                   <div
                     key={idx}
                     className="p-4 rounded-2xl bg-[#FFFDF9] border border-[#B8860B]/45 shadow-sm flex items-start gap-3.5"
@@ -403,7 +332,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data.ceremonies.map((event, idx) => (
+          {data.ceremonies.filter((event) => event.side !== 'groom').map((event, idx) => (
             <motion.div
               key={event.id}
               initial={{ opacity: 0, y: 28 }}

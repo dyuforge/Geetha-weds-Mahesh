@@ -26,7 +26,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ data }) => {
           <AnimatedDiya size={48} isLit={true} />
         </div>
 
-        <h2 className="font-display text-3xl sm:text-5xl font-bold text-gold-foil">
+        <h2 className="font-display text-3xl sm:text-5xl font-bold text-gold-foil tracking-widest" style={{ fontVariantLigatures: 'none' }}>
           {data.groom.firstName} &amp; {data.bride.firstName}
         </h2>
         <p className="text-sm sm:text-base font-serif font-semibold text-[#FCF6BA]">
