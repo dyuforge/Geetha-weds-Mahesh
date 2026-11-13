@@ -173,6 +173,45 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
         </div>
       </div>
 
+      {/* 1B. FOUR COUPLE GALLERY IMAGES BELOW BRIDE & GROOM CARDS */}
+      <div>
+        <div className="text-center max-w-2xl mx-auto mb-6">
+          <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
+            Cherished Moments
+          </span>
+          <h2 className="font-display text-2xl sm:text-4xl font-bold text-temple-crimson mt-1">
+            Mahesh &amp; Geetha
+          </h2>
+          <MandalaDivider />
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+          {[
+            { src: './photos/photo-1.jpg', alt: 'Mahesh and Geetha ring ceremony moment 1' },
+            { src: './photos/photo-2.jpg', alt: 'Mahesh and Geetha ring ceremony moment 2' },
+            { src: './photos/photo-3.jpg', alt: 'Geetha smiling at Mahesh during garland ceremony' },
+            { src: './photos/photo-4.jpg', alt: 'Mahesh and Geetha together with floral garlands' },
+          ].map((photo, idx) => (
+            <motion.div
+              key={photo.src}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.08, duration: 0.45 }}
+              whileHover={{ y: -4 }}
+              className="relative aspect-[2/3] rounded-2xl overflow-hidden border-2 border-[#B8860B]/70 bg-[#FBF5E8] shadow-[0_14px_35px_rgba(61,11,17,0.18)]"
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                className="w-full h-full object-cover object-center"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
       {/* 2. LIVE COUNTDOWN TIMER & SUBH MUHURTHAM HIGHLIGHT BANNER */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -230,7 +269,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
       <div>
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
-            Dec 10th to Dec 14th, 2026
+            Dec 10th to Dec 12th, 2026
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-temple-crimson mt-2">
             Pelli Kuthuru &amp; Wedding Events

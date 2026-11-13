@@ -26,7 +26,7 @@ export const AudioController: React.FC = () => {
           <Play className="w-4 h-4 text-[#FCF6BA] fill-[#FCF6BA]" />
         )}
         <span className="text-xs font-sans font-medium tracking-wider uppercase text-[#FCF6BA] hidden sm:inline">
-          {audioState.isPlaying ? 'Raag Yaman (Playing)' : 'Play Shehnai & Santoor'}
+          {audioState.isPlaying ? 'Wedding Song (Playing)' : 'Play Wedding Song'}
         </span>
         <Music className="w-3.5 h-3.5 text-[#D4AF62] sm:hidden" />
 

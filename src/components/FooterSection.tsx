@@ -50,9 +50,6 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ data }) => {
           <p className="text-xs text-[#FFF8EA]/80">
             Wedding: Dec 12th, Saturday 7:29 PM • {data.venue.name}, Lalpuram, Guntur
           </p>
-          <p className="text-xs text-[#FFF8EA]/80">
-            Reception: Dec 14th, 11:00 AM • {data.receptionVenue.name}, Jangareddygudem
-          </p>
         </div>
 
         <div className="pt-6 flex justify-center">

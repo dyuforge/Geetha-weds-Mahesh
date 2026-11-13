@@ -214,15 +214,6 @@ export const defaultWeddingData: WeddingData = {
       mapUrl: 'https://share.google/EyIE2Beb1kxANXDZo',
       iconType: 'muhurtham',
     },
-    {
-      date: 'Dec 14, 2026',
-      dayLabel: 'Monday',
-      event: 'Vratham & Reception',
-      time: '11:00 AM',
-      venue: 'Raja Rani Function Hall, Jangareddygudem',
-      mapUrl: 'https://share.google/O2Z9t337pE3JohHuU',
-      iconType: 'reception',
-    },
   ],
   groomSideSchedule: [
     {
