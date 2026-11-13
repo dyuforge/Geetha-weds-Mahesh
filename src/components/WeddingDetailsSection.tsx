@@ -303,23 +303,24 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                 backgroundImage: item.bgImage ? `url('${item.bgImage}')` : undefined,
               }}
             >
-              <div className="relative z-10 w-[86%] max-w-[250px] text-center space-y-2 bg-[#FFFDF8]/90 backdrop-blur-[1px] px-4 py-3.5 rounded-2xl border border-[#B8860B]/55 shadow-sm">
-                <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#7A1824] text-[#FCF6BA] text-[10px] font-sans font-bold uppercase tracking-wider">
+              <div className="relative z-10 w-[86%] max-w-[250px] text-center space-y-2 bg-gradient-to-b from-[#6B1020]/95 via-[#5C0C16]/95 to-[#4A0815]/95 px-4 py-3.5 rounded-2xl border-2 border-[#D4AF62] shadow-[0_14px_34px_rgba(61,11,17,0.45)]">
+                <div className="absolute inset-1 border border-[#FCF6BA]/25 rounded-xl pointer-events-none" />
+                <span className="relative inline-block px-2.5 py-0.5 rounded-full bg-[#D4AF62] text-[#3D0711] text-[10px] font-sans font-extrabold uppercase tracking-wider shadow-sm">
                   {item.date} • {item.dayLabel}
                 </span>
 
-                <h3 className="font-display text-base sm:text-lg font-bold text-[#6B1020] tracking-wide leading-snug">
+                <h3 className="relative font-display text-base sm:text-lg font-bold text-[#FCF6BA] tracking-wide leading-snug drop-shadow-sm">
                   {item.event}
                 </h3>
 
-                <div className="inline-flex items-center justify-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45 text-[11px] font-sans font-bold text-[#7A1824]">
-                  <Clock className="w-3 h-3" />
+                <div className="relative inline-flex items-center justify-center gap-1 px-2.5 py-0.5 rounded-full bg-[#3D0711]/90 border border-[#D4AF62]/75 text-[11px] font-sans font-bold text-[#FFF8EA]">
+                  <Clock className="w-3 h-3 text-[#D4AF62]" />
                   <span>{item.time}</span>
                 </div>
 
-                <div className="pt-1.5 border-t border-[#B8860B]/35 text-[11px] font-sans text-[#3D0B11] flex flex-col items-center gap-1.5">
+                <div className="relative pt-1.5 border-t border-[#D4AF62]/40 text-[11px] font-sans text-[#FFF8EA] flex flex-col items-center gap-1.5">
                   <span className="inline-flex items-center justify-center gap-1 font-semibold leading-tight">
-                    <MapPin className="w-3 h-3 text-[#7A1824] flex-shrink-0" />
+                    <MapPin className="w-3 h-3 text-[#D4AF62] flex-shrink-0" />
                     <span>{item.venue}</span>
                   </span>
                   {item.mapUrl && (
@@ -327,7 +328,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                       href={item.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#3D0B11] border border-[#B8860B]/70 shadow-sm text-[11px] font-bold hover:bg-[#FFF8EA] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#3D0B11] border border-[#D4AF62] shadow-md text-[11px] font-bold hover:bg-[#FFF8EA] transition-colors"
                     >
                       <GoogleMapsIcon className="w-3.5 h-3.5" />
                       <span>Google Maps</span>
