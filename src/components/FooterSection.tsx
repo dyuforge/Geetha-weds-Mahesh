@@ -14,7 +14,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ data }) => {
     <footer className="relative z-20 mt-10 border-t-2 border-[#B8860B] bg-gradient-to-b from-[#4A0815] via-[#3D0711] to-[#240309] text-center overflow-hidden text-[#FFF8EA]">
       <PalaceSilhouetteParallax className="opacity-45" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-10 pt-2 space-y-3.5">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-24 sm:pb-20 pt-2 space-y-3.5">
         <div className="flex items-center justify-center gap-4 sm:gap-6">
           <IndianBrideIcon size={58} />
           <div className="w-20 h-20 rounded-full border-2 border-[#D4AF62] bg-gradient-to-br from-[#7A1824] to-[#3D0711] flex flex-col items-center justify-center shadow-[0_0_30px_rgba(212,175,98,0.4)]">
