@@ -233,7 +233,7 @@ export const defaultWeddingData: WeddingData = {
       mapUrl: 'https://share.google/O2Z9t337pE3JohHuU',
       iconType: 'reception',
       bgImage: './backgrounds/event-reception.jpg',
-      contentTopClass: 'top-[23%]',
+      contentTopClass: 'top-[24%]',
     },
   ],
   groomSideSchedule: [
