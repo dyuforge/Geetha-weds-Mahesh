@@ -288,7 +288,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
           <MandalaDivider />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           {data.brideSideSchedule.map((item, idx) => (
             <motion.div
               key={item.event}
@@ -297,18 +297,18 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
               transition={{ delay: idx * 0.08, duration: 0.45 }}
-              className="relative w-full max-w-[380px] mx-auto aspect-[9/16] rounded-3xl p-5 sm:p-6 border-2 border-[#B8860B]/75 shadow-[0_20px_50px_rgba(61,11,17,0.2)] overflow-hidden bg-cover bg-center bg-no-repeat flex items-center justify-center"
+              className="relative w-full max-w-[340px] mx-auto aspect-[9/16] rounded-3xl p-4 border-2 border-[#B8860B]/75 shadow-[0_20px_50px_rgba(61,11,17,0.2)] overflow-hidden bg-cover bg-center bg-no-repeat flex items-center justify-center"
               style={{
                 backgroundColor: '#FBF5E8',
                 backgroundImage: item.bgImage ? `url('${item.bgImage}')` : undefined,
               }}
             >
-              <div className="relative z-10 w-[88%] max-w-[260px] text-center space-y-1.5 bg-[#FFFDF8]/90 backdrop-blur-[2px] px-3.5 py-3 rounded-2xl border border-[#B8860B]/50 shadow-md">
+              <div className="relative z-10 w-[86%] max-w-[250px] text-center space-y-2 bg-[#FFFDF8]/90 backdrop-blur-[1px] px-4 py-3.5 rounded-2xl border border-[#B8860B]/55 shadow-sm">
                 <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#7A1824] text-[#FCF6BA] text-[10px] font-sans font-bold uppercase tracking-wider">
                   {item.date} • {item.dayLabel}
                 </span>
 
-                <h3 className="font-display text-sm sm:text-base font-bold text-temple-crimson leading-snug">
+                <h3 className="font-display text-base sm:text-lg font-bold text-[#6B1020] tracking-wide leading-snug">
                   {item.event}
                 </h3>
 
@@ -317,8 +317,8 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                   <span>{item.time}</span>
                 </div>
 
-                <div className="pt-1.5 border-t border-[#B8860B]/35 text-[11px] font-sans text-[#4A2C11] flex flex-col items-center gap-1.5">
-                  <span className="inline-flex items-center justify-center gap-1 font-medium leading-tight">
+                <div className="pt-1.5 border-t border-[#B8860B]/35 text-[11px] font-sans text-[#3D0B11] flex flex-col items-center gap-1.5">
+                  <span className="inline-flex items-center justify-center gap-1 font-semibold leading-tight">
                     <MapPin className="w-3 h-3 text-[#7A1824] flex-shrink-0" />
                     <span>{item.venue}</span>
                   </span>

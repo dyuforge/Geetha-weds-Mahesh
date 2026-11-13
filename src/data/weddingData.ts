@@ -193,7 +193,7 @@ export const defaultWeddingData: WeddingData = {
     {
       date: 'Dec 10, 2026',
       dayLabel: 'Thursday',
-      event: 'Pelli Kuthuru & Haldi Function',
+      event: 'Pelli Kuthuru & Haldi',
       time: '8:05 AM',
       venue: 'At Our Residence',
       iconType: 'haldi',
@@ -202,7 +202,7 @@ export const defaultWeddingData: WeddingData = {
     {
       date: 'Dec 11, 2026',
       dayLabel: 'Friday',
-      event: 'Pelli Kuthuru & Sangeeth',
+      event: 'Sangeeth',
       time: '6:00 PM',
       venue: 'At Our Residence',
       iconType: 'sangeet',
@@ -211,7 +211,7 @@ export const defaultWeddingData: WeddingData = {
     {
       date: 'Dec 12, 2026',
       dayLabel: 'Saturday',
-      event: 'Pelli Kuthuru & Pelli (Wedding)',
+      event: 'Kalyanam',
       time: '7:29 PM',
       venue: 'ASR Convention, Lalpuram, Guntur',
       mapUrl: 'https://share.google/EyIE2Beb1kxANXDZo',
