@@ -47,13 +47,26 @@ export const MainInvitationHero: React.FC<MainInvitationHeroProps> = ({
         className="relative z-20 max-w-[740px] mx-auto rounded-3xl p-1 sm:p-2 bg-gradient-to-b from-[#D4AF62] via-[#8B6508] to-[#B8860B] shadow-[0_25px_80px_rgba(61,11,17,0.32)]"
       >
         <div
-          className="relative rounded-[20px] pt-24 sm:pt-36 pb-40 sm:pb-56 px-5 sm:px-14 text-center overflow-hidden bg-no-repeat bg-center"
+          className="relative rounded-[20px] overflow-hidden text-center"
           style={{
             backgroundColor: '#F7EFE1',
-            backgroundImage: `url('./backgrounds/temple-arch-kalash.jpg')`,
-            backgroundSize: '100% 100%',
           }}
         >
+          {/* Top Temple Arch, Jasmine Garlands & Bells — Native Aspect Ratio, Zero Zoom/Stretch */}
+          <div
+            className="w-full aspect-[682/245] bg-top bg-no-repeat relative pointer-events-none"
+            style={{
+              backgroundImage: `url('./backgrounds/temple-arch-kalash.jpg')`,
+              backgroundSize: '100% auto',
+            }}
+          >
+            <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#F7EFE1] to-transparent" />
+          </div>
+
+          {/* Center Parchment Content Area — Expands Cleanly on Any Screen Size */}
+          <div className="relative px-4 sm:px-14 -mt-10 sm:-mt-16 z-10">
+            {/* Subtle Gold Side Frame Lines Matching the Temple Arch */}
+            <div className="hidden sm:block absolute inset-y-0 left-10 right-10 border-x border-[#B8860B]/35 pointer-events-none" />
           {/* 1. DEVOTIONAL LORD GANESHA PRESENTATION */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -259,6 +272,18 @@ export const MainInvitationHero: React.FC<MainInvitationHeroProps> = ({
               ✨ <strong className="text-white">{blessingsCount}</strong> Auspicious Diya
               Blessings Offered for {data.groom.firstName} &amp; {data.bride.firstName}
             </p>
+          </div>
+          </div>
+
+          {/* Bottom Temple Brass Lamps, Lotus Urli, Kalash & Kolam — Native Aspect Ratio, Zero Zoom/Stretch */}
+          <div
+            className="w-full aspect-[682/290] bg-bottom bg-no-repeat relative -mt-6 sm:-mt-10 pointer-events-none"
+            style={{
+              backgroundImage: `url('./backgrounds/temple-arch-kalash.jpg')`,
+              backgroundSize: '100% auto',
+            }}
+          >
+            <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-[#F7EFE1] to-transparent" />
           </div>
         </div>
       </motion.div>

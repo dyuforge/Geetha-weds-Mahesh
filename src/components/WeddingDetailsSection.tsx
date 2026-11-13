@@ -82,22 +82,21 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
           <MandalaDivider />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Groom Card */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* Groom Card — Exact 2:3 Portrait Ratio */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             whileHover={{ y: -4 }}
             transition={{ duration: 0.55 }}
-            className="relative rounded-3xl pt-20 pb-36 px-6 sm:px-8 border-2 border-[#B8860B]/70 shadow-[0_20px_50px_rgba(61,11,17,0.18)] overflow-hidden bg-no-repeat bg-center"
+            className="relative w-full max-w-[440px] mx-auto aspect-[2/3] rounded-3xl p-5 sm:p-8 border-2 border-[#B8860B]/70 shadow-[0_20px_50px_rgba(61,11,17,0.18)] overflow-hidden bg-cover bg-center bg-no-repeat flex items-center justify-center"
             style={{
               backgroundColor: '#F7EFE1',
               backgroundImage: `url('./backgrounds/temple-courtyard-lamps.jpg')`,
-              backgroundSize: '100% 100%',
             }}
           >
-            <div className="relative z-10 text-center space-y-3 bg-[#FFFDF8]/88 backdrop-blur-[2px] p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
+            <div className="relative z-10 w-full text-center space-y-2.5 bg-[#FFFDF8]/90 backdrop-blur-[2px] p-4 sm:p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
               <span className="inline-block px-4 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-widest bg-[#7A1824] text-[#FCF6BA] border border-[#D4AF62]">
                 Pelli Koduku • The Groom
               </span>
@@ -132,21 +131,20 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
             </div>
           </motion.div>
 
-          {/* Bride Card */}
+          {/* Bride Card — Exact 2:3 Portrait Ratio */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             whileHover={{ y: -4 }}
             transition={{ duration: 0.55 }}
-            className="relative rounded-3xl pt-20 pb-36 px-6 sm:px-8 border-2 border-[#B8860B]/70 shadow-[0_20px_50px_rgba(61,11,17,0.18)] overflow-hidden bg-no-repeat bg-center"
+            className="relative w-full max-w-[440px] mx-auto aspect-[2/3] rounded-3xl p-5 sm:p-8 border-2 border-[#B8860B]/70 shadow-[0_20px_50px_rgba(61,11,17,0.18)] overflow-hidden bg-cover bg-center bg-no-repeat flex items-center justify-center"
             style={{
               backgroundColor: '#F7EFE1',
               backgroundImage: `url('./backgrounds/temple-gopuram-lotus.jpg')`,
-              backgroundSize: '100% 100%',
             }}
           >
-            <div className="relative z-10 text-center space-y-3 bg-[#FFFDF8]/88 backdrop-blur-[2px] p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
+            <div className="relative z-10 w-full text-center space-y-2.5 bg-[#FFFDF8]/90 backdrop-blur-[2px] p-4 sm:p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
               <span className="inline-block px-4 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-widest bg-[#7A1824] text-[#FCF6BA] border border-[#D4AF62]">
                 Pelli Kuthuru • The Bride
               </span>

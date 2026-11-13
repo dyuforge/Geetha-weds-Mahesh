@@ -71,34 +71,33 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 1.04, filter: 'blur(6px)' }}
       transition={{ duration: 0.8, ease: 'easeInOut' }}
-      className="relative min-h-screen w-full flex items-center justify-center py-0 sm:py-6 px-0 sm:px-4 select-none bg-gradient-to-b from-[#E8D5B5] via-[#F5E9D4] to-[#E2CBA4]"
+      className="relative min-h-screen w-full flex items-center justify-center py-3 sm:py-6 px-2.5 sm:px-4 select-none bg-gradient-to-b from-[#E8D5B5] via-[#F5E9D4] to-[#E2CBA4]"
     >
-      {/* Responsive Portrait Temple Frame — Preserves Full 2:3 Aspect Ratio Without Zooming or Cropping */}
+      {/* Exact 2:3 Portrait Temple Frame — Matches 682x1024 Image Ratio on All Screens (No Zoom/Stretch) */}
       <div
-        className="relative w-full max-w-[680px] min-h-screen sm:min-h-[900px] sm:rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(61,11,17,0.3)] sm:border-2 sm:border-[#B8860B]/70 flex flex-col items-center justify-between pt-20 sm:pt-24 pb-28 sm:pb-32 px-4 sm:px-10 bg-no-repeat bg-center"
+        className="relative w-full max-w-[540px] aspect-[2/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(61,11,17,0.3)] border-2 border-[#B8860B]/70 flex flex-col items-center justify-between pt-14 sm:pt-24 pb-12 sm:pb-24 px-4 sm:px-10 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('./backgrounds/temple-courtyard-lamps.jpg')`,
-          backgroundSize: '100% 100%',
         }}
       >
         {/* Top Sacred Invocation in Telugu — Positioned Cleanly Below the Hanging Temple Bells */}
-        <div className="relative z-20 flex flex-col items-center text-center px-5 py-2 rounded-2xl bg-[#FBF5E8]/90 border border-[#B8860B]/50 shadow-sm">
+        <div className="relative z-20 flex flex-col items-center text-center px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-[#FBF5E8]/92 border border-[#B8860B]/50 shadow-sm">
           <motion.p
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.15 }}
-            className="text-sm sm:text-lg font-serif font-bold tracking-[0.14em] text-[#7A1824]"
+            className="text-xs sm:text-lg font-serif font-bold tracking-[0.12em] sm:tracking-[0.14em] text-[#7A1824]"
           >
             ॥ ఓం శ్రీ గణేశాయ నమః ॥
           </motion.p>
-          <p className="text-[11px] sm:text-xs text-[#5C3A10] font-serif font-semibold tracking-wider mt-0.5">
+          <p className="text-[10px] sm:text-xs text-[#5C3A10] font-serif font-semibold tracking-wider mt-0.5">
             Sriramula &amp; Rangu Families Cordially Invite You
           </p>
         </div>
 
         {/* Center 3D Interactive Wedding Envelope Stage */}
         <div
-          className="relative z-20 my-auto w-full max-w-[460px] flex flex-col items-center justify-center perspective-2000"
+          className="relative z-20 my-auto w-full max-w-[270px] sm:max-w-[400px] flex flex-col items-center justify-center perspective-2000"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -255,18 +254,18 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
               <GoldCornerOrnament position="bottom-right" className="absolute bottom-2 right-2 opacity-90" />
 
               {/* Prominent Couple Names & Wedding Date Plaque on the Envelope Front */}
-              <div className="absolute inset-x-0 bottom-2.5 sm:bottom-4 flex flex-col items-center justify-center text-center px-3">
-                <div className="px-5 sm:px-8 py-2.5 sm:py-3 rounded-xl bg-gradient-to-b from-[#7A1824] via-[#5C0C16] to-[#3D0711] border-2 border-[#D4AF62] shadow-[0_10px_28px_rgba(61,11,17,0.6)]">
-                  <p className="text-[9px] sm:text-[11px] font-sans uppercase tracking-[0.22em] text-[#FCF6BA] mb-0.5">
+              <div className="absolute inset-x-0 bottom-2 sm:bottom-3.5 flex flex-col items-center justify-center text-center px-2.5 sm:px-3">
+                <div className="px-3.5 sm:px-7 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-b from-[#7A1824] via-[#5C0C16] to-[#3D0711] border border-[#D4AF62] sm:border-2 shadow-[0_8px_22px_rgba(61,11,17,0.6)]">
+                  <p className="text-[8px] sm:text-[10px] font-sans uppercase tracking-[0.2em] text-[#FCF6BA] mb-0.5">
                     శుభ వివాహ ఆహ్వాన పత్రిక
                   </p>
-                  <h1 className="font-display text-xl sm:text-3xl font-bold text-gold-foil tracking-wider">
+                  <h1 className="font-display text-base sm:text-2xl font-bold text-gold-foil tracking-wider">
                     {data.groom.firstName} &amp; {data.bride.firstName}
                   </h1>
-                  <div className="mt-1 flex items-center justify-center gap-2 text-[11px] sm:text-xs font-serif tracking-[0.12em] text-[#FFF8EA]">
-                    <span className="h-[1px] w-4 bg-[#D4AF62]" />
-                    <span>Dec 12th, Saturday • 7:29 PM</span>
-                    <span className="h-[1px] w-4 bg-[#D4AF62]" />
+                  <div className="mt-0.5 sm:mt-1 flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-serif tracking-[0.1em] text-[#FFF8EA]">
+                    <span className="h-[1px] w-3 sm:w-4 bg-[#D4AF62]" />
+                    <span>Dec 12th, Sat • 7:29 PM</span>
+                    <span className="h-[1px] w-3 sm:w-4 bg-[#D4AF62]" />
                   </div>
                 </div>
               </div>
