@@ -23,9 +23,9 @@ export const MainInvitationHero: React.FC<MainInvitationHeroProps> = ({
     >
       {/* Devotional Lord Ganesha Header Scroll */}
       <motion.div
-        initial={{ opacity: 0, y: 30, scale: 0.98 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: 'easeOut' }}
         className="relative z-20 max-w-[680px] mx-auto rounded-3xl p-1 sm:p-2 bg-gradient-to-b from-[#D4AF62] via-[#8B6508] to-[#B8860B] shadow-[0_25px_80px_rgba(61,11,17,0.3)]"
       >
         <div

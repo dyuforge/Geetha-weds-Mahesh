@@ -102,10 +102,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
               </span>
 
               <div className="pt-1">
-                <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#8B6508]">
-                  Full Name
-                </p>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-temple-crimson mt-0.5">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-temple-crimson">
                   {data.groom.fullName}
                 </h3>
               </div>
@@ -149,10 +146,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
               </span>
 
               <div className="pt-1">
-                <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#8B6508]">
-                  Full Name
-                </p>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-temple-crimson mt-0.5">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-temple-crimson">
                   {data.bride.fullName}
                 </h3>
               </div>
@@ -319,100 +313,22 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
         </div>
       </div>
 
-      {/* 4. DETAILED CEREMONY CARDS */}
-      <div>
-        <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
-            Auspicious Rituals &amp; Celebrations
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-temple-crimson mt-2">
-            Ceremony Highlights
-          </h2>
-          <MandalaDivider />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data.ceremonies.filter((event) => event.side !== 'groom').map((event, idx) => (
-            <motion.div
-              key={event.id}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.08, duration: 0.55 }}
-              whileHover={{ y: -6 }}
-              className={`relative rounded-3xl p-6 sm:p-7 bg-[#FBF5E8] border-2 border-[#B8860B]/60 gold-glow flex flex-col justify-between overflow-hidden ${
-                event.id === 'muhurtham' ? 'md:col-span-2 lg:col-span-2 border-[#7A1824]' : ''
-              }`}
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-xs font-sans font-bold tracking-wider text-[#FCF6BA] px-3 py-1 rounded-full bg-[#7A1824] border border-[#D4AF62]">
-                    {event.sideLabel}
-                  </span>
-                  <div className="w-10 h-10 rounded-2xl bg-[#F3E3C6] border border-[#B8860B]/50 flex items-center justify-center shadow-sm">
-                    {renderCeremonyIcon(event.iconType)}
-                  </div>
-                </div>
-
-                <p className="text-xs font-serif font-semibold text-[#8B6508] mb-1">
-                  {event.hindiTitle}
-                </p>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-temple-crimson">
-                  {event.name}
-                </h3>
-                <p className="mt-2 text-sm font-serif text-[#4A2C11] leading-relaxed">
-                  {event.description}
-                </p>
-              </div>
-
-              <div className="mt-5 pt-4 border-t border-[#B8860B]/35 space-y-2 text-xs sm:text-sm font-sans">
-                <div className="flex items-center gap-2.5 text-[#3D0B11]">
-                  <Calendar className="w-4 h-4 text-[#7A1824] flex-shrink-0" />
-                  <span className="font-bold">{event.date}</span>
-                </div>
-                <div className="flex items-center gap-2.5 text-[#7A1824]">
-                  <Clock className="w-4 h-4 text-[#8B6508] flex-shrink-0" />
-                  <span className="font-bold">{event.time}</span>
-                </div>
-                <div className="flex items-center justify-between gap-2 text-[#4A2C11]">
-                  <span className="flex items-center gap-2.5">
-                    <MapPin className="w-4 h-4 text-[#7A1824] flex-shrink-0" />
-                    <span className="font-medium">{event.venueArea}</span>
-                  </span>
-                  {event.mapUrl && (
-                    <a
-                      href={event.mapUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#7A1824] text-[#FCF6BA] text-xs font-semibold hover:bg-[#5C0C16] transition-colors flex-shrink-0"
-                    >
-                      <span>Directions</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* 5. WEDDING VENUE (GUNTUR) & RECEPTION VENUE (JANGAREDDYGUDEM) + GOOGLE MAPS LINKS */}
+      {/* 4. WEDDING VENUE (GUNTUR) + GOOGLE MAPS LINK */}
       <div id="venue-section" className="scroll-mt-24">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
-            Venues &amp; Google Maps Directions
+            Venue &amp; Google Maps Directions
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-temple-crimson mt-2">
-            Wedding &amp; Reception Venues
+            Wedding Venue
           </h2>
           <MandalaDivider />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="max-w-xl mx-auto">
           {/* Wedding Venue Card: ASR Convention, Lalpuram, Guntur */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative rounded-3xl p-6 sm:p-9 bg-[#FBF5E8] border-2 border-[#B8860B] gold-glow flex flex-col justify-between overflow-hidden"
@@ -453,54 +369,6 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
               >
                 <Navigation className="w-4 h-4 fill-[#FCF6BA]" />
                 <span>Open Wedding Venue in Google Maps</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Reception Venue Card: Raja Rani Function Hall, Jangareddygudem */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl p-6 sm:p-9 bg-[#FBF5E8] border-2 border-[#B8860B] gold-glow flex flex-col justify-between overflow-hidden"
-          >
-            <GoldCornerOrnament position="top-left" className="absolute top-2 left-2" />
-            <GoldCornerOrnament position="top-right" className="absolute top-2 right-2" />
-
-            <div className="relative z-10 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#8B6508] text-xs font-sans font-bold uppercase tracking-widest text-[#FFF8EA]">
-                <Crown className="w-3.5 h-3.5 text-[#FCF6BA]" />
-                <span>{data.receptionVenue.title}</span>
-              </div>
-
-              <h3 className="font-display text-2xl sm:text-4xl font-bold text-temple-crimson">
-                {data.receptionVenue.name}
-              </h3>
-              <p className="text-sm sm:text-base font-sans font-bold text-[#7A1824]">
-                {data.receptionVenue.dateTimeLabel}
-              </p>
-
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#FFFDF9] border border-[#B8860B]/45 space-y-1 text-sm font-sans text-[#3D0B11] shadow-sm">
-                <p className="font-bold text-base text-[#4A0815]">{data.receptionVenue.hallName}</p>
-                <p className="font-medium">{data.receptionVenue.addressLine1}</p>
-                <p className="font-bold text-[#7A1824]">{data.receptionVenue.cityStatePin}</p>
-              </div>
-
-              <p className="text-xs sm:text-sm font-serif italic text-[#4A2C11]">
-                {data.receptionVenue.hospitalityNote}
-              </p>
-            </div>
-
-            <div className="relative z-10 pt-6 mt-4 border-t border-[#B8860B]/35">
-              <a
-                href={data.receptionVenue.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#7A1824] via-[#8F192E] to-[#6B1020] text-[#FCF6BA] font-sans font-bold text-sm tracking-wide shadow-[0_8px_25px_rgba(122,24,36,0.35)] hover:shadow-[0_12px_30px_rgba(122,24,36,0.55)] border border-[#D4AF62] transition-all"
-              >
-                <Navigation className="w-4 h-4 fill-[#FCF6BA]" />
-                <span>Open Reception Venue in Google Maps</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>

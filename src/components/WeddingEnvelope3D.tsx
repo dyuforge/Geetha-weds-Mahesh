@@ -51,15 +51,15 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
 
     window.setTimeout(() => {
       setStage('flap-open');
-    }, 380);
+    }, 100);
 
     window.setTimeout(() => {
       setStage('card-emerge');
-    }, 1050);
+    }, 340);
 
     window.setTimeout(() => {
       onOpenComplete();
-    }, 2650);
+    }, 880);
   };
 
   const isFlapOpen = stage === 'flap-open' || stage === 'card-emerge';
@@ -69,8 +69,8 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 1.04, filter: 'blur(6px)' }}
-      transition={{ duration: 0.8, ease: 'easeInOut' }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
       className="relative min-h-screen w-full flex items-center justify-center py-3 sm:py-6 px-2.5 sm:px-4 select-none bg-gradient-to-b from-[#E8D5B5] via-[#F5E9D4] to-[#E2CBA4]"
     >
       {/* Exact 2:3 Portrait Temple Frame — Matches 682x1024 Image Ratio on All Screens (No Zoom/Stretch) */}
@@ -154,7 +154,7 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
                     }
               }
               transition={{
-                duration: 1.15,
+                duration: 0.45,
                 ease: [0.22, 1, 0.36, 1],
               }}
               style={{
@@ -278,7 +278,7 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
                 rotateX: isFlapOpen ? 180 : 0,
               }}
               transition={{
-                duration: 0.85,
+                duration: 0.35,
                 ease: [0.4, 0, 0.2, 1],
               }}
               style={{
