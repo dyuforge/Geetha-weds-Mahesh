@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { WeddingData, WeddingThemeId } from '../data/weddingData';
-import { LordGaneshaArtwork } from './OrnamentalSVGs';
+import { FloralToranGarland, LordGaneshaArtwork } from './OrnamentalSVGs';
 
 interface MainInvitationHeroProps {
   data: WeddingData;
@@ -19,8 +19,13 @@ export const MainInvitationHero: React.FC<MainInvitationHeroProps> = ({
   return (
     <section
       id="invitation-top"
-      className="relative w-full pt-4 sm:pt-8 pb-6 px-2.5 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative w-full pt-0 pb-6 px-2.5 sm:px-6 lg:px-8 overflow-hidden"
     >
+      {/* Traditional Mango Leaves & Marigold Flower Toran at Top */}
+      <div className="relative z-30 -mx-2.5 sm:-mx-6 lg:-mx-8 mb-2">
+        <FloralToranGarland />
+      </div>
+
       {/* Devotional Lord Ganesha Header Scroll */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}

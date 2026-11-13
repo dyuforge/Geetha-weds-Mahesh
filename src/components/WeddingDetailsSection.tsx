@@ -277,7 +277,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
       <div>
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-sans font-bold uppercase tracking-[0.28em] text-[#8B6508]">
-            Dec 10th to Dec 12th, 2026
+            Dec 10th to Dec 14th, 2026
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-temple-crimson mt-2">
             Pelli Kuthuru &amp; Wedding Events
@@ -288,7 +288,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
           <MandalaDivider />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-center">
           {data.brideSideSchedule.map((item, idx) => (
             <motion.div
               key={item.event}
@@ -353,54 +353,56 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
           <MandalaDivider />
         </div>
 
-        <div className="max-w-xl mx-auto">
-          {/* Wedding Venue Card: ASR Convention, Lalpuram, Guntur */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl p-6 sm:p-9 bg-[#FBF5E8] border-2 border-[#B8860B] gold-glow flex flex-col justify-between overflow-hidden"
-          >
-            <GoldCornerOrnament position="top-left" className="absolute top-2 left-2" />
-            <GoldCornerOrnament position="top-right" className="absolute top-2 right-2" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[data.venue, data.receptionVenue].map((venueItem) => (
+            <motion.div
+              key={venueItem.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative rounded-3xl p-6 sm:p-8 bg-[#FBF5E8] border-2 border-[#B8860B] gold-glow flex flex-col justify-between overflow-hidden"
+            >
+              <GoldCornerOrnament position="top-left" className="absolute top-2 left-2" />
+              <GoldCornerOrnament position="top-right" className="absolute top-2 right-2" />
 
-            <div className="relative z-10 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#7A1824] text-xs font-sans font-bold uppercase tracking-widest text-[#FCF6BA]">
-                <SacredKalashIcon size={18} />
-                <span>{data.venue.title}</span>
+              <div className="relative z-10 space-y-3.5">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#7A1824] text-xs font-sans font-bold uppercase tracking-widest text-[#FCF6BA]">
+                  <SacredKalashIcon size={18} />
+                  <span>{venueItem.title}</span>
+                </div>
+
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-temple-crimson">
+                  {venueItem.name}
+                </h3>
+                <p className="text-sm sm:text-base font-sans font-bold text-[#7A1824]">
+                  {venueItem.dateTimeLabel}
+                </p>
+
+                <div className="p-4 rounded-2xl bg-[#FFFDF9] border border-[#B8860B]/45 space-y-1 text-sm font-sans text-[#3D0B11] shadow-sm">
+                  <p className="font-bold text-base text-[#4A0815]">{venueItem.hallName}</p>
+                  <p className="font-medium">{venueItem.addressLine1}</p>
+                  <p className="font-bold text-[#7A1824]">{venueItem.cityStatePin}</p>
+                </div>
+
+                <p className="text-xs sm:text-sm font-serif italic text-[#4A2C11]">
+                  {venueItem.hospitalityNote}
+                </p>
               </div>
 
-              <h3 className="font-display text-2xl sm:text-4xl font-bold text-temple-crimson">
-                {data.venue.name}
-              </h3>
-              <p className="text-sm sm:text-base font-sans font-bold text-[#7A1824]">
-                {data.venue.dateTimeLabel}
-              </p>
-
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#FFFDF9] border border-[#B8860B]/45 space-y-1 text-sm font-sans text-[#3D0B11] shadow-sm">
-                <p className="font-bold text-base text-[#4A0815]">{data.venue.hallName}</p>
-                <p className="font-medium">{data.venue.addressLine1}</p>
-                <p className="font-bold text-[#7A1824]">{data.venue.cityStatePin}</p>
+              <div className="relative z-10 pt-5 mt-4 border-t border-[#B8860B]/35">
+                <a
+                  href={venueItem.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-[#7A1824] via-[#8F192E] to-[#6B1020] text-[#FCF6BA] font-sans font-bold text-sm tracking-wide shadow-[0_8px_25px_rgba(122,24,36,0.35)] hover:shadow-[0_12px_30px_rgba(122,24,36,0.55)] border border-[#D4AF62] transition-all"
+                >
+                  <GoogleMapsIcon className="w-5 h-5" />
+                  <span>Google Maps</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
-
-              <p className="text-xs sm:text-sm font-serif italic text-[#4A2C11]">
-                {data.venue.hospitalityNote}
-              </p>
-            </div>
-
-            <div className="relative z-10 pt-6 mt-4 border-t border-[#B8860B]/35">
-              <a
-                href={data.venue.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#7A1824] via-[#8F192E] to-[#6B1020] text-[#FCF6BA] font-sans font-bold text-sm tracking-wide shadow-[0_8px_25px_rgba(122,24,36,0.35)] hover:shadow-[0_12px_30px_rgba(122,24,36,0.55)] border border-[#D4AF62] transition-all"
-              >
-                <GoogleMapsIcon className="w-5 h-5" />
-                <span>Google Maps</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
