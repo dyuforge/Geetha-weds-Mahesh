@@ -33,7 +33,7 @@ export default {
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
-        display: ['"Cinzel Decorative"', '"Cinzel"', 'Georgia', 'serif'],
+        display: ['"Cinzel"', '"Cormorant Garamond"', 'Georgia', 'serif'],
         script: ['"Great Vibes"', 'cursive'],
         sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
       },

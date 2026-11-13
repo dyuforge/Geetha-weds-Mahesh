@@ -455,7 +455,7 @@ export const PalaceSilhouetteParallax: React.FC<{ className?: string }> = ({ cla
       <svg
         viewBox="0 0 1440 220"
         preserveAspectRatio="none"
-        className="w-full h-28 sm:h-44 opacity-25"
+        className="w-full h-14 sm:h-20 opacity-25"
       >
         <defs>
           <linearGradient id="palaceSilGrad" x1="50%" y1="0%" x2="50%" y2="100%">
@@ -481,4 +481,102 @@ export const PalaceSilhouetteParallax: React.FC<{ className?: string }> = ({ cla
     </div>
   );
 };
+
+export const GoogleMapsIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
+    <path fill="#1a73e8" d="M24 4C15.16 4 8 11.16 8 20c0 10.5 16 24 16 24s16-13.5 16-24c0-8.84-7.16-16-16-16z" />
+    <path fill="#ea4335" d="M24 4c-4.42 0-8.42 1.79-11.31 4.69L24 20V4z" />
+    <path fill="#fbbc04" d="M12.69 8.69C9.79 11.58 8 15.58 8 20c0 4.2 1.61 8.01 4.25 10.87L24 20 12.69 8.69z" />
+    <path fill="#34a853" d="M24 20l-11.75 10.87C15.89 34.81 24 44 24 44s10.22-8.63 14.11-16.58L24 20z" />
+    <circle cx="24" cy="20" r="6.5" fill="#ffffff" />
+  </svg>
+);
+
+export const IndianBrideIcon: React.FC<{ size?: number; className?: string }> = ({
+  size = 56,
+  className = '',
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 80 80"
+    className={`shrink-0 ${className}`}
+    aria-label="Indian Bride"
+  >
+    <circle cx="40" cy="40" r="37" fill="#5C0C16" stroke="#D4AF62" strokeWidth="2.5" />
+    {/* Bridal Dupatta / Pallu */}
+    <path d="M19 68 C21 50, 27 42, 40 42 C53 42, 59 50, 61 68 Z" fill="#B91C1C" stroke="#FCF6BA" strokeWidth="1.5" />
+    <path d="M24 44 C26 24, 32 16, 40 16 C48 16, 54 24, 56 44" fill="#9E1B32" stroke="#D4AF62" strokeWidth="1.5" />
+    {/* Face */}
+    <circle cx="40" cy="31" r="10.5" fill="#F4C7A1" />
+    {/* Hair & Jasmine Gajra */}
+    <path d="M29.5 30 C29.5 21, 35 18, 40 18 C45 18, 50.5 21, 50.5 30 C48 25, 44 24, 40 24 C36 24, 32 25, 29.5 30 Z" fill="#1F1209" />
+    <path d="M28 24 Q40 15 52 24" fill="none" stroke="#FFFBEB" strokeWidth="2.5" strokeDasharray="2 2.5" strokeLinecap="round" />
+    {/* Maang Tikka & Bindi */}
+    <line x1="40" y1="19" x2="40" y2="24" stroke="#FFD700" strokeWidth="1.3" />
+    <circle cx="40" cy="24.5" r="1.8" fill="#FFD700" />
+    <circle cx="40" cy="28.5" r="1.1" fill="#DC2626" />
+    {/* Eyes & Smile */}
+    <circle cx="36.2" cy="31" r="1" fill="#2D160B" />
+    <circle cx="43.8" cy="31" r="1" fill="#2D160B" />
+    <path d="M37.5 35.5 Q40 37.5 42.5 35.5" fill="none" stroke="#991B1B" strokeWidth="1.2" strokeLinecap="round" />
+    {/* Gold Jhumkas & Necklace */}
+    <circle cx="29" cy="33" r="1.8" fill="#FFD700" />
+    <circle cx="51" cy="33" r="1.8" fill="#FFD700" />
+    <path d="M32 45 Q40 53 48 45" fill="none" stroke="#FFD700" strokeWidth="2.2" />
+    <path d="M30 48 Q40 57 50 48" fill="none" stroke="#FCF6BA" strokeWidth="1.4" strokeDasharray="2 2" />
+  </svg>
+);
+
+export const IndianGroomIcon: React.FC<{ size?: number; className?: string }> = ({
+  size = 56,
+  className = '',
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 80 80"
+    className={`shrink-0 ${className}`}
+    aria-label="Indian Groom"
+  >
+    <circle cx="40" cy="40" r="37" fill="#5C0C16" stroke="#D4AF62" strokeWidth="2.5" />
+    {/* Royal Ivory & Gold Sherwani */}
+    <path d="M19 68 C21 50, 27 42, 40 42 C53 42, 59 50, 61 68 Z" fill="#FFF8EA" stroke="#D4AF62" strokeWidth="1.6" />
+    <path d="M40 43 L40 68" stroke="#D4AF62" strokeWidth="1.5" />
+    {/* Garland */}
+    <path d="M31 44 Q40 58 49 44" fill="none" stroke="#DC2626" strokeWidth="3.2" strokeLinecap="round" />
+    <path d="M32 44 Q40 56 48 44" fill="none" stroke="#FBBF24" strokeWidth="1.4" strokeDasharray="2 3" />
+    {/* Face */}
+    <circle cx="40" cy="32" r="10.2" fill="#EBB68A" />
+    {/* Royal Pagdi / Turban & Kalgi */}
+    <path d="M27 27 C27 17, 34 14, 40 14 C46 14, 53 17, 53 27 C47 24, 33 24, 27 27 Z" fill="#9E1B32" stroke="#D4AF62" strokeWidth="1.5" />
+    <path d="M29 24 Q40 19 51 24" fill="none" stroke="#FCF6BA" strokeWidth="1.5" />
+    <path d="M40 15 L43 8 L45 13 Z" fill="#FFD700" />
+    <circle cx="40" cy="17" r="2" fill="#FCF6BA" stroke="#B8860B" strokeWidth="0.8" />
+    {/* Tilak, Eyes & Smile */}
+    <line x1="40" y1="26.5" x2="40" y2="29.5" stroke="#DC2626" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="36.2" cy="32" r="1" fill="#2D160B" />
+    <circle cx="43.8" cy="32" r="1" fill="#2D160B" />
+    <path d="M37.5 36 Q40 37.8 42.5 36" fill="none" stroke="#5C2B14" strokeWidth="1.2" strokeLinecap="round" />
+  </svg>
+);
+
+export const SacredKalashIcon: React.FC<{ size?: number; className?: string }> = ({
+  size = 28,
+  className = '',
+}) => (
+  <svg width={size} height={size} viewBox="0 0 48 48" className={`shrink-0 ${className}`} aria-hidden="true">
+    {/* Mango Leaves */}
+    <path d="M24 14 C16 8, 10 10, 12 18 C16 16, 20 16, 24 18 Z" fill="#15803D" />
+    <path d="M24 14 C32 8, 38 10, 36 18 C32 16, 28 16, 24 18 Z" fill="#16A34A" />
+    {/* Coconut */}
+    <circle cx="24" cy="15" r="5.5" fill="#78350F" stroke="#D4AF62" strokeWidth="1" />
+    {/* Brass Kalash Pot */}
+    <path d="M16 20 L32 20 C35 25, 36 35, 30 41 L18 41 C12 35, 13 25, 16 20 Z" fill="#D4AF62" stroke="#7A1824" strokeWidth="1.4" />
+    <path d="M14 20 L34 20" stroke="#7A1824" strokeWidth="2" strokeLinecap="round" />
+    {/* Swastik / Sacred Dot */}
+    <circle cx="24" cy="31" r="2.2" fill="#9E1B32" />
+    <path d="M17 41 L31 41 L33 44 L15 44 Z" fill="#9C7A32" />
+  </svg>
+);
 

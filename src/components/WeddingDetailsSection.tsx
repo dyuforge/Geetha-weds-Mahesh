@@ -4,7 +4,6 @@ import {
   Calendar,
   Clock,
   MapPin,
-  Navigation,
   Sparkles,
   Sun,
   Flower2,
@@ -14,7 +13,14 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { WeddingData, CeremonyEvent, SideScheduleItem } from '../data/weddingData';
-import { GoldCornerOrnament, MandalaDivider } from './OrnamentalSVGs';
+import {
+  GoldCornerOrnament,
+  MandalaDivider,
+  GoogleMapsIcon,
+  IndianBrideIcon,
+  IndianGroomIcon,
+  SacredKalashIcon,
+} from './OrnamentalSVGs';
 
 interface WeddingDetailsSectionProps {
   data: WeddingData;
@@ -96,7 +102,8 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
               backgroundImage: `url('./backgrounds/temple-gopuram-lotus.jpg')`,
             }}
           >
-            <div className="relative z-10 w-full text-center space-y-2.5 bg-[#FFFDF8]/90 backdrop-blur-[2px] p-4 sm:p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
+            <div className="relative z-10 w-full text-center space-y-2 bg-[#FFFDF8]/90 backdrop-blur-[2px] p-4 sm:p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
+              <IndianBrideIcon size={46} className="mx-auto" />
               <span className="inline-block px-4 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-widest bg-[#7A1824] text-[#FCF6BA] border border-[#D4AF62]">
                 Pelli Kuthuru • The Bride
               </span>
@@ -113,15 +120,15 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                 </span>
               </div>
 
-              <div className="pt-3 mt-3 border-t border-[#B8860B]/35">
+              <div className="pt-2.5 mt-2.5 border-t border-[#B8860B]/35">
                 <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#8B6508]">
                   Parents
                 </p>
                 <p className="font-serif text-base sm:text-lg font-bold text-[#3D0B11] mt-1">
-                  {data.bride.parents.mother}
+                  {data.bride.parents.father}
                 </p>
                 <p className="font-serif text-base sm:text-lg font-bold text-[#3D0B11]">
-                  {data.bride.parents.father}
+                  {data.bride.parents.mother}
                 </p>
               </div>
             </div>
@@ -140,7 +147,8 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
               backgroundImage: `url('./backgrounds/temple-courtyard-lamps.jpg')`,
             }}
           >
-            <div className="relative z-10 w-full text-center space-y-2.5 bg-[#FFFDF8]/90 backdrop-blur-[2px] p-4 sm:p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
+            <div className="relative z-10 w-full text-center space-y-2 bg-[#FFFDF8]/90 backdrop-blur-[2px] p-4 sm:p-5 rounded-2xl border border-[#B8860B]/40 shadow-sm">
+              <IndianGroomIcon size={46} className="mx-auto" />
               <span className="inline-block px-4 py-1 rounded-full text-xs font-sans font-bold uppercase tracking-widest bg-[#7A1824] text-[#FCF6BA] border border-[#D4AF62]">
                 Pelli Koduku • The Groom
               </span>
@@ -295,27 +303,23 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                 backgroundImage: item.bgImage ? `url('${item.bgImage}')` : undefined,
               }}
             >
-              <div className="relative z-10 w-full text-center space-y-3 bg-[#FFFDF8]/90 backdrop-blur-[2px] p-5 rounded-2xl border border-[#B8860B]/50 shadow-md">
-                <div className="w-12 h-12 mx-auto rounded-xl bg-[#F5E6C8] border border-[#B8860B]/60 flex items-center justify-center shadow-sm">
-                  {renderCeremonyIcon(item.iconType)}
-                </div>
-
-                <span className="inline-block px-3 py-1 rounded-full bg-[#7A1824] text-[#FCF6BA] text-[11px] font-sans font-bold uppercase tracking-wider">
+              <div className="relative z-10 w-[88%] max-w-[260px] text-center space-y-1.5 bg-[#FFFDF8]/90 backdrop-blur-[2px] px-3.5 py-3 rounded-2xl border border-[#B8860B]/50 shadow-md">
+                <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#7A1824] text-[#FCF6BA] text-[10px] font-sans font-bold uppercase tracking-wider">
                   {item.date} • {item.dayLabel}
                 </span>
 
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-temple-crimson leading-snug">
+                <h3 className="font-display text-sm sm:text-base font-bold text-temple-crimson leading-snug">
                   {item.event}
                 </h3>
 
-                <div className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45 text-xs font-sans font-bold text-[#7A1824]">
-                  <Clock className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center justify-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F5E6C8] border border-[#B8860B]/45 text-[11px] font-sans font-bold text-[#7A1824]">
+                  <Clock className="w-3 h-3" />
                   <span>{item.time}</span>
                 </div>
 
-                <div className="pt-2 border-t border-[#B8860B]/35 text-xs sm:text-sm font-sans text-[#4A2C11] flex flex-col items-center gap-2">
-                  <span className="inline-flex items-center justify-center gap-1 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-[#7A1824] flex-shrink-0" />
+                <div className="pt-1.5 border-t border-[#B8860B]/35 text-[11px] font-sans text-[#4A2C11] flex flex-col items-center gap-1.5">
+                  <span className="inline-flex items-center justify-center gap-1 font-medium leading-tight">
+                    <MapPin className="w-3 h-3 text-[#7A1824] flex-shrink-0" />
                     <span>{item.venue}</span>
                   </span>
                   {item.mapUrl && (
@@ -323,10 +327,10 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                       href={item.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#7A1824] text-[#FCF6BA] text-xs font-bold hover:bg-[#5C0C16] transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#3D0B11] border border-[#B8860B]/70 shadow-sm text-[11px] font-bold hover:bg-[#FFF8EA] transition-colors"
                     >
-                      <span>Open in Maps</span>
-                      <ExternalLink className="w-3 h-3" />
+                      <GoogleMapsIcon className="w-3.5 h-3.5" />
+                      <span>Google Maps</span>
                     </a>
                   )}
                 </div>
@@ -361,7 +365,7 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
 
             <div className="relative z-10 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#7A1824] text-xs font-sans font-bold uppercase tracking-widest text-[#FCF6BA]">
-                <MapPin className="w-3.5 h-3.5 text-[#D4AF62]" />
+                <SacredKalashIcon size={18} />
                 <span>{data.venue.title}</span>
               </div>
 
@@ -390,8 +394,8 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#7A1824] via-[#8F192E] to-[#6B1020] text-[#FCF6BA] font-sans font-bold text-sm tracking-wide shadow-[0_8px_25px_rgba(122,24,36,0.35)] hover:shadow-[0_12px_30px_rgba(122,24,36,0.55)] border border-[#D4AF62] transition-all"
               >
-                <Navigation className="w-4 h-4 fill-[#FCF6BA]" />
-                <span>Open Wedding Venue in Google Maps</span>
+                <GoogleMapsIcon className="w-5 h-5" />
+                <span>Google Maps</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>

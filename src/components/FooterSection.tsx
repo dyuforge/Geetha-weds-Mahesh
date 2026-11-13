@@ -1,7 +1,7 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
 import { WeddingData } from '../data/weddingData';
-import { AnimatedDiya, MandalaDivider, PalaceSilhouetteParallax } from './OrnamentalSVGs';
+import { IndianBrideIcon, IndianGroomIcon, MandalaDivider, PalaceSilhouetteParallax } from './OrnamentalSVGs';
 
 interface FooterSectionProps {
   data: WeddingData;
@@ -11,19 +11,19 @@ interface FooterSectionProps {
 
 export const FooterSection: React.FC<FooterSectionProps> = ({ data }) => {
   return (
-    <footer className="relative z-20 mt-16 border-t-2 border-[#B8860B] bg-gradient-to-b from-[#4A0815] via-[#3D0711] to-[#240309] text-center overflow-hidden text-[#FFF8EA]">
+    <footer className="relative z-20 mt-10 border-t-2 border-[#B8860B] bg-gradient-to-b from-[#4A0815] via-[#3D0711] to-[#240309] text-center overflow-hidden text-[#FFF8EA]">
       <PalaceSilhouetteParallax className="opacity-45" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-20 pt-4 space-y-6">
-        <div className="flex items-center justify-center gap-6">
-          <AnimatedDiya size={48} isLit={true} />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pb-10 pt-2 space-y-3.5">
+        <div className="flex items-center justify-center gap-4 sm:gap-6">
+          <IndianBrideIcon size={58} />
           <div className="w-20 h-20 rounded-full border-2 border-[#D4AF62] bg-gradient-to-br from-[#7A1824] to-[#3D0711] flex flex-col items-center justify-center shadow-[0_0_30px_rgba(212,175,98,0.4)]">
-            <span className="text-[10px] font-serif text-[#FCF6BA]"> శుభ వివాహం </span>
+            <span className="text-[10px] font-serif text-[#FCF6BA]">శుభ వివాహం</span>
             <span className="font-display text-lg font-bold text-gold-foil">
               {data.bride.firstName[0]} &amp; {data.groom.firstName[0]}
             </span>
           </div>
-          <AnimatedDiya size={48} isLit={true} />
+          <IndianGroomIcon size={58} />
         </div>
 
         <h2 className="font-display text-3xl sm:text-5xl font-bold text-gold-foil tracking-widest" style={{ fontVariantLigatures: 'none' }}>
@@ -52,7 +52,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ data }) => {
           </p>
         </div>
 
-        <div className="pt-6 flex justify-center">
+        <div className="pt-3 flex justify-center">
           <p className="inline-flex flex-wrap items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#3D0711] via-[#590B1A] to-[#3D0711] border border-[#D4AF62]/70 shadow-[0_0_25px_rgba(212,175,98,0.3)] text-sm sm:text-base font-sans text-[#FFF8EA] tracking-wide">
             <span>Crafted with</span>
             <Heart className="w-4 h-4 text-rose-500 fill-rose-500 inline animate-pulse" />
