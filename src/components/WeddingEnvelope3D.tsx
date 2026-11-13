@@ -91,7 +91,7 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
             ॥ ఓం శ్రీ గణేశాయ నమః ॥
           </motion.p>
           <p className="text-[10px] sm:text-xs text-[#5C3A10] font-serif font-semibold tracking-wider mt-0.5">
-            Sriramula &amp; Rangu Families Cordially Invite You
+            Rangu &amp; Sriramula Families Cordially Invite You
           </p>
         </div>
 
@@ -175,13 +175,13 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
               </div>
 
               <div className="relative z-10 my-0.5">
-                <h2 className="font-display text-xl sm:text-3xl font-bold text-[#6B1020] tracking-wide">
-                  {data.groom.firstName}{' '}
+                <h2 className="font-display text-xl sm:text-3xl font-bold text-[#6B1020] tracking-wider">
+                  {data.bride.firstName}{' '}
                   <span className="text-[#B8860B] font-script font-normal">&amp;</span>{' '}
-                  {data.bride.firstName}
+                  {data.groom.firstName}
                 </h2>
                 <p className="mt-0.5 text-[10px] sm:text-xs font-serif font-semibold text-[#4A2C11]">
-                  {data.groom.fullName} &amp; {data.bride.fullName}
+                  {data.bride.fullName} &amp; {data.groom.fullName}
                 </p>
               </div>
 
@@ -260,7 +260,7 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
                     శుభ వివాహ ఆహ్వాన పత్రిక
                   </p>
                   <h1 className="font-display text-base sm:text-2xl font-bold text-gold-foil tracking-widest" style={{ fontVariantLigatures: 'none' }}>
-                    {data.groom.firstName} &amp; {data.bride.firstName}
+                    {data.bride.firstName} &amp; {data.groom.firstName}
                   </h1>
                   <div className="mt-0.5 sm:mt-1 flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-serif tracking-[0.1em] text-[#FFF8EA]">
                     <span className="h-[1px] w-3 sm:w-4 bg-[#D4AF62]" />
@@ -339,7 +339,7 @@ export const WeddingEnvelope3D: React.FC<WeddingEnvelope3DProps> = ({
                   <div className="w-full h-full rounded-full border border-[#6B1020]/60 bg-gradient-to-br from-[#D4AF62] to-[#9C7A32] flex flex-col items-center justify-center text-[#3D0711]">
                     <span className="text-[9px] font-serif font-bold leading-none">ఓం</span>
                     <span className="font-display text-xs font-black tracking-tighter">
-                      M &amp; G
+                      G &amp; M
                     </span>
                   </div>
                 </motion.div>

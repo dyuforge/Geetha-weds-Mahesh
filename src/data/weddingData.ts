@@ -77,6 +77,7 @@ export interface SideScheduleItem {
   venue: string;
   mapUrl?: string;
   iconType: 'haldi' | 'mehendi' | 'sangeet' | 'muhurtham' | 'reception';
+  bgImage?: string;
 }
 
 export interface WeddingData {
@@ -144,7 +145,7 @@ export const defaultWeddingData: WeddingData = {
     firstName: 'Geetha',
     fullName: 'Rangu Geetha Madhuri',
     parents: {
-      father: 'Sri Rangu Prabakaro',
+      father: 'Sri Rangu Prabhakara Rao',
       mother: 'Smt. Rangu Bhagya Lakshmi',
       familyOrigin: 'Rangu Vari Kutumbam',
     },
@@ -196,23 +197,26 @@ export const defaultWeddingData: WeddingData = {
       time: '8:05 AM',
       venue: 'At Our Residence',
       iconType: 'haldi',
+      bgImage: './backgrounds/event-haldi.jpg',
     },
     {
       date: 'Dec 11, 2026',
       dayLabel: 'Friday',
-      event: 'Pelli Kuthuru, Mehendi & Sangeeth',
+      event: 'Pelli Kuthuru & Sangeeth',
       time: '6:00 PM',
       venue: 'At Our Residence',
-      iconType: 'mehendi',
+      iconType: 'sangeet',
+      bgImage: './backgrounds/event-sangeeth.jpg',
     },
     {
       date: 'Dec 12, 2026',
       dayLabel: 'Saturday',
       event: 'Pelli Kuthuru & Pelli (Wedding)',
       time: '7:29 PM',
-      venue: 'At Our Residence / ASR Convention, Lalpuram, Guntur',
+      venue: 'ASR Convention, Lalpuram, Guntur',
       mapUrl: 'https://share.google/EyIE2Beb1kxANXDZo',
       iconType: 'muhurtham',
+      bgImage: './backgrounds/event-marriage.jpg',
     },
   ],
   groomSideSchedule: [

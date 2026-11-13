@@ -20,17 +20,17 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ data }) => {
           <div className="w-20 h-20 rounded-full border-2 border-[#D4AF62] bg-gradient-to-br from-[#7A1824] to-[#3D0711] flex flex-col items-center justify-center shadow-[0_0_30px_rgba(212,175,98,0.4)]">
             <span className="text-[10px] font-serif text-[#FCF6BA]"> శుభ వివాహం </span>
             <span className="font-display text-lg font-bold text-gold-foil">
-              {data.groom.firstName[0]} &amp; {data.bride.firstName[0]}
+              {data.bride.firstName[0]} &amp; {data.groom.firstName[0]}
             </span>
           </div>
           <AnimatedDiya size={48} isLit={true} />
         </div>
 
         <h2 className="font-display text-3xl sm:text-5xl font-bold text-gold-foil tracking-widest" style={{ fontVariantLigatures: 'none' }}>
-          {data.groom.firstName} &amp; {data.bride.firstName}
+          {data.bride.firstName} &amp; {data.groom.firstName}
         </h2>
         <p className="text-sm sm:text-base font-serif font-semibold text-[#FCF6BA]">
-          {data.groom.fullName} &amp; {data.bride.fullName}
+          {data.bride.fullName} &amp; {data.groom.fullName}
         </p>
 
         <p className="text-sm sm:text-base font-serif italic text-[#FFF8EA]/85 max-w-xl mx-auto">
@@ -45,7 +45,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ data }) => {
             With Best Compliments &amp; Warm Regards From
           </p>
           <p className="font-semibold text-base sm:text-lg text-[#FFF8EA]">
-            The Sriramula &amp; Rangu Families
+            The Rangu &amp; Sriramula Families
           </p>
           <p className="text-xs text-[#FFF8EA]/80">
             Wedding: Dec 12th, Saturday 7:29 PM • {data.venue.name}, Lalpuram, Guntur
@@ -57,8 +57,8 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ data }) => {
             <span>Crafted with</span>
             <Heart className="w-4 h-4 text-rose-500 fill-rose-500 inline animate-pulse" />
             <span>
-              for <strong className="text-[#FCF6BA] font-semibold">{data.groom.firstName}</strong> and{' '}
-              <strong className="text-[#FCF6BA] font-semibold">{data.bride.firstName}</strong> from{' '}
+              for <strong className="text-[#FCF6BA] font-semibold">{data.bride.firstName}</strong> and{' '}
+              <strong className="text-[#FCF6BA] font-semibold">{data.groom.firstName}</strong> from{' '}
               <a
                 href="https://www.dyuforge.com"
                 target="_blank"

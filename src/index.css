@@ -19,6 +19,11 @@
   }
 }
 
+.font-display {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "dlig" 0, "calt" 0;
+}
+
 /* Custom Gold Foil Text Gradient for Dark Surfaces */
 .text-gold-foil {
   background: linear-gradient(

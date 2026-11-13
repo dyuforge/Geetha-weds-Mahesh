@@ -61,12 +61,32 @@ export const MainInvitationHero: React.FC<MainInvitationHeroProps> = ({
                 <LordGaneshaArtwork size={105} />
               </div>
 
-              <p className="mt-2.5 text-xs sm:text-sm font-serif italic font-semibold text-[#5C0C16] max-w-md">
-                “Vakratunda Mahakaya Suryakoti Samaprabha, Nirvighnam Kuru Me Deva Sarva-Kaaryeshu Sarvada”
-              </p>
-              <span className="mt-0.5 text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-[0.18em] text-[#8B6508]">
-                {theme.invocationMeaning}
-              </span>
+              <div className="mt-4 px-5 py-3.5 rounded-2xl bg-gradient-to-br from-[#FFFDF7] via-[#FDF4DC] to-[#F7E7B8] border-2 border-[#D4AF62] shadow-[0_8px_24px_rgba(122,24,36,0.12)] max-w-lg">
+                <p className="text-xs sm:text-sm font-serif italic font-bold text-[#6B1020] leading-relaxed">
+                  “Vakratunda Mahakaya Suryakoti Samaprabha, Nirvighnam Kuru Me Deva Sarva-Kaaryeshu Sarvada”
+                </p>
+                <div className="my-2 flex items-center justify-center gap-2">
+                  <span className="h-[1px] w-8 bg-[#B8860B]/60" />
+                  <span className="text-[#B8860B] text-xs">✦</span>
+                  <span className="h-[1px] w-8 bg-[#B8860B]/60" />
+                </div>
+                <span className="block text-[11px] sm:text-xs font-sans font-extrabold uppercase tracking-[0.16em] text-[#7A1824]">
+                  {theme.invocationMeaning}
+                </span>
+              </div>
+
+              {/* Highlighted Geetha weds Mahesh Centerpiece */}
+              <div className="mt-5 px-6 sm:px-10 py-4 rounded-2xl bg-gradient-to-r from-[#5C0C16] via-[#7A1824] to-[#5C0C16] border-2 border-[#D4AF62] shadow-[0_12px_32px_rgba(92,12,22,0.32)] relative overflow-hidden">
+                <div className="absolute inset-1 border border-[#FCF6BA]/35 rounded-xl pointer-events-none" />
+                <p className="text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.26em] text-[#FCF6BA]/90 mb-1">
+                  శుభ వివాహ ఆహ్వానము • Subha Vivaham
+                </p>
+                <h1 className="font-display text-2xl sm:text-4xl font-bold text-gold-foil tracking-wider flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                  <span>{data.bride.firstName}</span>
+                  <span className="font-script text-xl sm:text-3xl text-[#FCF6BA] font-normal lowercase">weds</span>
+                  <span className="tracking-wider">{data.groom.firstName}</span>
+                </h1>
+              </div>
             </motion.div>
           </div>
 
