@@ -1,0 +1,59 @@
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronsDown } from 'lucide-react';
+
+export const ScrollDownHint: React.FC = () => {
+  const [isAtEnd, setIsAtEnd] = useState(false);
+
+  useEffect(() => {
+    const checkScroll = () => {
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 80;
+      setIsAtEnd(scrolledToBottom);
+    };
+
+    checkScroll();
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    window.addEventListener('resize', checkScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, []);
+
+  const handleScrollDown = () => {
+    window.scrollBy({
+      top: Math.round(window.innerHeight * 0.75),
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <AnimatePresence>
+      {!isAtEnd && (
+        <motion.button
+          type="button"
+          onClick={handleScrollDown}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 12 }}
+          transition={{ duration: 0.25 }}
+          aria-label="Scroll down"
+          className="fixed bottom-5 left-4 sm:left-1/2 sm:-translate-x-1/2 z-40 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#3D0711]/90 hover:bg-[#5C0C16] backdrop-blur-md border border-[#D4AF62]/70 shadow-[0_6px_20px_rgba(61,11,17,0.4)] text-[#FCF6BA] cursor-pointer transition-colors"
+        >
+          <span className="text-[10px] sm:text-xs font-sans font-semibold uppercase tracking-wider">
+            Scroll Down
+          </span>
+          <motion.span
+            animate={{ y: [0, 3.5, 0] }}
+            transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
+            className="inline-flex items-center"
+          >
+            <ChevronsDown className="w-3.5 h-3.5 text-[#D4AF62]" />
+          </motion.span>
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+};

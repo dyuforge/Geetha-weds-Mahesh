@@ -6,6 +6,7 @@ import { MainInvitationHero } from './components/MainInvitationHero';
 import { WeddingDetailsSection } from './components/WeddingDetailsSection';
 import { FooterSection } from './components/FooterSection';
 import { AudioController } from './components/AudioController';
+import { ScrollDownHint } from './components/ScrollDownHint';
 
 export function App() {
   const [weddingData, setWeddingData] = useState<WeddingData>(defaultWeddingData);
@@ -63,6 +64,9 @@ export function App() {
               onUpdateData={setWeddingData}
               onReplayEnvelope={handleReplayEnvelope}
             />
+
+            {/* Scroll Down Hint (shown only on invitation page until the end) */}
+            <ScrollDownHint />
           </motion.main>
         )}
       </AnimatePresence>
