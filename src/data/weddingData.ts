@@ -200,7 +200,7 @@ export const defaultWeddingData: WeddingData = {
       mapUrl: 'https://maps.app.goo.gl/QajhXv9KGaz1VBBy5',
       iconType: 'haldi',
       bgImage: './backgrounds/event-haldi.jpg',
-      contentTopClass: 'top-[33%]',
+      contentTopClass: 'top-[28%]',
     },
     {
       date: 'Dec 11, 2026',
