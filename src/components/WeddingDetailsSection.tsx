@@ -131,6 +131,17 @@ export const WeddingDetailsSection: React.FC<WeddingDetailsSectionProps> = ({ da
                   {data.bride.parents.mother}
                 </p>
               </div>
+
+              {data.bride.sister && (
+                <div className="pt-2 mt-2 border-t border-[#B8860B]/25">
+                  <p className="text-[11px] font-sans font-bold uppercase tracking-widest text-[#8B6508]">
+                    Sister
+                  </p>
+                  <p className="font-serif text-base sm:text-lg font-bold text-[#3D0B11] mt-0.5">
+                    {data.bride.sister}
+                  </p>
+                </div>
+              )}
             </div>
           </motion.div>
 

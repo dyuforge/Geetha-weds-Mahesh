@@ -90,6 +90,7 @@ export interface WeddingData {
       mother: string;
       familyOrigin: string;
     };
+    sister?: string;
     bio: string;
   };
   groom: {
@@ -150,6 +151,7 @@ export const defaultWeddingData: WeddingData = {
       mother: 'Smt. Rangu Bhagya Lakshmi',
       familyOrigin: 'Rangu Vari Kutumbam',
     },
+    sister: 'Rangu Revathi',
     bio: 'Rooted in love, grace, and cherished family values, beginning a sacred journey of togetherness.',
   },
   weddingDate: {
